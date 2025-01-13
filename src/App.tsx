@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Menu from "./pages/Menu";
 import Gallery from "./pages/Gallery";
+import Reservations from "./pages/Reservations";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ export default () => (
           <Route path="/" element={<Index />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/reservations" element={<Reservations />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
