@@ -11,8 +11,8 @@ const Navbar = () => {
         <Link to="/" className="text-white hover:text-kamalo-red transition-colors">
           Home
         </Link>
-        <Link to="/discover" className="text-white hover:text-kamalo-red transition-colors">
-          Discover
+        <Link to="/gallery" className="text-white hover:text-kamalo-red transition-colors">
+          Gallery
         </Link>
         <Link to="/menu" className="text-white hover:text-kamalo-red transition-colors">
           Menu
