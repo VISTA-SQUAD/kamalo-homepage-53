@@ -14,20 +14,17 @@ const Menu = () => {
           Our <span className="text-kamalo-red">Menu</span>
         </h1>
 
-        {/* Main Dishes */}
+        {/* Veg Sides */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Main Dishes</h2>
+          <h2 className="text-2xl font-semibold mb-6">Veg Sides</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-medium">Grilled T-Bone Steak</h3>
-                    <Badge className="bg-kamalo-red">Popular</Badge>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">R 289.99</p>
+                  <h3 className="text-lg font-medium mb-2">Spinach</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
                   <p className="text-sm text-gray-300">
-                    Premium cut T-bone steak grilled to perfection, served with roasted vegetables and your choice of sides.
+                    A combination of fresh vegetables to bring maximum flavour to the dish.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -39,13 +36,10 @@ const Menu = () => {
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-medium">Grilled Salmon</h3>
-                    <Badge className="bg-kamalo-gold">Chef's Special</Badge>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">R 249.99</p>
+                  <h3 className="text-lg font-medium mb-2">Kasava Leaves</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
                   <p className="text-sm text-gray-300">
-                    Fresh Atlantic salmon fillet, grilled and glazed with honey-lemon sauce, served with quinoa and asparagus.
+                    Tender kasava leaves, a unique and flavourful savoury taste, a very go to traditional meal.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -57,12 +51,55 @@ const Menu = () => {
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-medium">Chicken Supreme</h3>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">R 189.99</p>
+                  <h3 className="text-lg font-medium mb-2">Matembele</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
                   <p className="text-sm text-gray-300">
-                    Tender chicken breast stuffed with spinach and feta, served with mashed potatoes and seasonal vegetables.
+                    Sweet potato leaves.
+                  </p>
+                </div>
+                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">Ndunda</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
+                  <p className="text-sm text-gray-300">
+                    Also known as "Lenga Lenga", traditional vegetables used, also cultivated in South African soil.
+                  </p>
+                </div>
+                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">Ngai Ngai</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
+                  <p className="text-sm text-gray-300">
+                    Ngai ngai or osielle, very delightful and sour taste to it which complements every other dish on our menu.
+                  </p>
+                </div>
+                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
+                  <Plus className="h-4 w-4" />
+                </Button>
+              </div>
+            </Card>
+
+            <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="text-lg font-medium mb-2">Repu</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 67.50</p>
+                  <p className="text-sm text-gray-300">
+                    A very popular dish in places in Zimbabwe and has a very delightful flavour known for its freshness.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -73,17 +110,19 @@ const Menu = () => {
           </div>
         </section>
 
-        {/* Starters */}
+        {/* Monday's Specials */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Starters</h2>
+          <h2 className="text-2xl font-semibold mb-6">Monday's Specials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Calamari Rings</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 89.99</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-lg font-medium">Kapenta</h3>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">R 162.00</p>
                   <p className="text-sm text-gray-300">
-                    Crispy fried calamari rings served with tartar sauce and lemon wedges.
+                    Kapenta, cooked in a light tomato sauce. Served with pap and a veg of your choice.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -95,10 +134,13 @@ const Menu = () => {
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Greek Salad</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 79.99</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-lg font-medium">Ngolo (Cat Fish)</h3>
+                    <Badge className="bg-kamalo-gold">Popular</Badge>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">R 162.00</p>
                   <p className="text-sm text-gray-300">
-                    Fresh mixed greens, feta cheese, olives, cucumber, and tomatoes with olive oil dressing.
+                    Cooked ngolo with light green pepper sauce. Served with pap with veg of your choice.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -106,20 +148,25 @@ const Menu = () => {
                 </Button>
               </div>
             </Card>
+
+            {/* Add more Monday specials here */}
           </div>
         </section>
 
-        {/* Desserts */}
+        {/* Sides */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">Desserts</h2>
+          <h2 className="text-2xl font-semibold mb-6">Sides</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Chocolate Lava Cake</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 69.99</p>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-lg font-medium">Portion Pap</h3>
+                    <Badge className="bg-kamalo-gold">100% (3)</Badge>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-2">R 13.50</p>
                   <p className="text-sm text-gray-300">
-                    Warm chocolate cake with a molten center, served with vanilla ice cream.
+                    Found in all traditional African homes, can be eaten with any of our other dishes.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -131,31 +178,10 @@ const Menu = () => {
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Crème Brûlée</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 59.99</p>
+                  <h3 className="text-lg font-medium mb-2">Portion Rice</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 34.00</p>
                   <p className="text-sm text-gray-300">
-                    Classic French vanilla custard with a caramelized sugar crust.
-                  </p>
-                </div>
-                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </section>
-
-        {/* Beverages */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">Beverages</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-lg font-medium mb-2">Signature Cocktails</h3>
-                  <p className="text-sm text-gray-400 mb-2">From R 79.99</p>
-                  <p className="text-sm text-gray-300">
-                    Ask your server about our selection of handcrafted cocktails.
+                    Fried rice, a very popular dish among customers to be enjoyed with other dishes such as beans or matembele.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
@@ -167,10 +193,10 @@ const Menu = () => {
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
               <div className="flex justify-between items-start">
                 <div>
-                  <h3 className="text-lg font-medium mb-2">Premium Wines</h3>
-                  <p className="text-sm text-gray-400 mb-2">From R 89.99</p>
+                  <h3 className="text-lg font-medium mb-2">Shikwanga (Sour Pap)</h3>
+                  <p className="text-sm text-gray-400 mb-2">R 33.75</p>
                   <p className="text-sm text-gray-300">
-                    Extensive selection of local and international wines.
+                    Soured kasva pap, enjoy it with any other of our delicious dishes.
                   </p>
                 </div>
                 <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
