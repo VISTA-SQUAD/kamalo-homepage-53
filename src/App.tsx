@@ -7,6 +7,7 @@ import Menu from "./pages/Menu";
 import Gallery from "./pages/Gallery";
 import Reservations from "./pages/Reservations";
 import About from "./pages/About";
+import Reviews from "./pages/Reviews";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ export default () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/about" element={<About />} />
+          <Route path="/reviews" element={<Reviews />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
