@@ -29,15 +29,18 @@ const Reservations = () => {
     return dates;
   };
 
+  const generateGuestNumbers = () => {
+    const numbers = [];
+    for (let i = 1; i <= 25; i++) {
+      numbers.push(i);
+    }
+    return numbers;
+  };
+
   const timeSlots = [
-    "9:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
+    "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", 
+    "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM",
+    "9:00 PM", "10:00 PM", "11:00 PM"
   ];
 
   const handleWhatsAppConfirm = () => {
@@ -51,7 +54,7 @@ const Reservations = () => {
       <Navbar />
       <div className="container mx-auto px-4 pt-24 pb-20">
         <div className="max-w-2xl mx-auto bg-black rounded-lg p-8 border border-gray-700">
-          <p className="text-gray-300 mb-6">Open: 9:00 AM to 5:00 PM, 7 days a week</p>
+          <p className="text-gray-300 mb-6">Open: 11:00 AM to 11:00 PM, 7 days a week</p>
           
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
@@ -96,16 +99,18 @@ const Reservations = () => {
 
             <div>
               <label className="text-white block mb-2">Number of Guests</label>
-              <div className="relative">
-                <input
-                  type="number"
-                  value={guests}
-                  onChange={(e) => setGuests(e.target.value)}
-                  min="1"
-                  max="10"
-                  className="w-full p-3 bg-[#1A1F2C] rounded-lg text-white border border-gray-700"
-                />
-              </div>
+              <Select onValueChange={setGuests}>
+                <SelectTrigger className="w-full bg-[#1A1F2C] text-white border-gray-700">
+                  <SelectValue placeholder="Select number of guests" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#1A1F2C] text-white border-gray-700">
+                  {generateGuestNumbers().map((num) => (
+                    <SelectItem key={num} value={num.toString()} className="hover:bg-gray-700">
+                      {num} {num === 1 ? 'Guest' : 'Guests'}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div>
