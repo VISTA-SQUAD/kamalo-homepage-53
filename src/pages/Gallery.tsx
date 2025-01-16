@@ -1,7 +1,73 @@
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState, useEffect } from "react";
+
+interface GalleryImage {
+  id: number;
+  category: "restaurant" | "barbershop" | "perfumes";
+  url: string;
+  alt: string;
+}
 
 const Gallery = () => {
+  const [images, setImages] = useState<GalleryImage[]>([
+    // Restaurant images
+    {
+      id: 1,
+      category: "restaurant",
+      url: "/lovable-uploads/599ca1fa-efe5-4c32-b9f6-792121b33f69.png",
+      alt: "Restaurant Interior with Red Seating",
+    },
+    {
+      id: 2,
+      category: "restaurant",
+      url: "/lovable-uploads/a604402a-0fb2-47c7-8cc5-3092109063dd.png",
+      alt: "Restaurant Lounge Area",
+    },
+    {
+      id: 3,
+      category: "restaurant",
+      url: "/lovable-uploads/d872671b-d745-434f-a42b-b65834d1ed68.png",
+      alt: "Restaurant Seating Area",
+    },
+    // Barbershop images
+    {
+      id: 4,
+      category: "barbershop",
+      url: "/lovable-uploads/9360b9e9-30e1-4319-8db0-968661e99207.png",
+      alt: "Barbershop Interior",
+    },
+    {
+      id: 5,
+      category: "barbershop",
+      url: "/lovable-uploads/c5fbfe29-4798-4b3f-8f4a-026e7de67497.png",
+      alt: "Barbershop Products",
+    },
+    // Perfumes & Shisha images
+    {
+      id: 6,
+      category: "perfumes",
+      url: "/lovable-uploads/e8bac841-0a55-4ef6-be6d-f24cbc468ab1.png",
+      alt: "Perfume Display",
+    },
+    {
+      id: 7,
+      category: "perfumes",
+      url: "/lovable-uploads/ffad6fca-7d8f-47fc-9f1a-fd9afbc2885b.png",
+      alt: "Shisha Collection",
+    },
+    {
+      id: 8,
+      category: "perfumes",
+      url: "/lovable-uploads/ad681f73-a6fa-48ca-90ac-12c051f1ba0a.png",
+      alt: "Shisha Display",
+    },
+  ]);
+
+  const getImagesByCategory = (category: string) => {
+    return images.filter((image) => image.category === category);
+  };
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white pt-24 px-6">
       <h1 className="text-4xl font-bold mb-12 text-center">
@@ -9,20 +75,19 @@ const Gallery = () => {
       </h1>
 
       <Tabs defaultValue="restaurant" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4">
+        <TabsList className="grid w-full grid-cols-1 lg:grid-cols-3">
           <TabsTrigger value="restaurant">Restaurant</TabsTrigger>
           <TabsTrigger value="barbershop">Barbershop</TabsTrigger>
-          <TabsTrigger value="catering">Catering Services</TabsTrigger>
           <TabsTrigger value="perfumes">Perfumes & Shisha</TabsTrigger>
         </TabsList>
 
         <TabsContent value="restaurant">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {[1, 2, 3].map((index) => (
-              <Card key={index} className="overflow-hidden">
+            {getImagesByCategory("restaurant").map((image) => (
+              <Card key={image.id} className="overflow-hidden">
                 <img
-                  src={`https://source.unsplash.com/800x600/?restaurant,food`}
-                  alt={`Restaurant ${index}`}
+                  src={image.url}
+                  alt={image.alt}
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </Card>
@@ -32,25 +97,11 @@ const Gallery = () => {
 
         <TabsContent value="barbershop">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {[1, 2, 3].map((index) => (
-              <Card key={index} className="overflow-hidden">
+            {getImagesByCategory("barbershop").map((image) => (
+              <Card key={image.id} className="overflow-hidden">
                 <img
-                  src={`https://source.unsplash.com/800x600/?barbershop,haircut`}
-                  alt={`Barbershop ${index}`}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
-
-        <TabsContent value="catering">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {[1, 2, 3].map((index) => (
-              <Card key={index} className="overflow-hidden">
-                <img
-                  src={`https://source.unsplash.com/800x600/?catering,event-food`}
-                  alt={`Catering ${index}`}
+                  src={image.url}
+                  alt={image.alt}
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </Card>
@@ -60,11 +111,11 @@ const Gallery = () => {
 
         <TabsContent value="perfumes">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {[1, 2, 3].map((index) => (
-              <Card key={index} className="overflow-hidden">
+            {getImagesByCategory("perfumes").map((image) => (
+              <Card key={image.id} className="overflow-hidden">
                 <img
-                  src={`https://source.unsplash.com/800x600/?perfume,shisha`}
-                  alt={`Perfumes & Shisha ${index}`}
+                  src={image.url}
+                  alt={image.alt}
                   className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                 />
               </Card>
