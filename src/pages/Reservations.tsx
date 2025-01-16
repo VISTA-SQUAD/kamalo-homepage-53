@@ -40,7 +40,7 @@ const Reservations = () => {
   const timeSlots = [
     "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", 
     "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM",
-    "9:00 PM", "10:00 PM", "11:00 PM"
+    "9:00 PM", "10:00 PM"
   ];
 
   const handleWhatsAppConfirm = () => {
@@ -54,7 +54,7 @@ const Reservations = () => {
       <Navbar />
       <div className="container mx-auto px-4 pt-24 pb-20">
         <div className="max-w-2xl mx-auto bg-black rounded-lg p-8 border border-gray-700">
-          <p className="text-gray-300 mb-6">Open: 11:00 AM to 11:00 PM, 7 days a week</p>
+          <p className="text-gray-300 mb-6">Open: 11:00 AM to 10:00 PM, 7 days a week</p>
           
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
