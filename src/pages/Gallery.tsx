@@ -11,7 +11,7 @@ interface GalleryImage {
 
 const Gallery = () => {
   const [images, setImages] = useState<GalleryImage[]>([
-    // Restaurant images
+    // Restaurant images (including both old and new images)
     {
       id: 1,
       category: "restaurant",
@@ -42,34 +42,52 @@ const Gallery = () => {
       url: "/lovable-uploads/393a1c30-ce61-455e-a8b7-1dba7749b61d.png",
       alt: "Restaurant Interior with Blue Decor",
     },
-    // Barbershop images
     {
       id: 6,
+      category: "restaurant",
+      url: "/lovable-uploads/599ca1fa-efe5-4c32-b9f6-792121b33f69.png",
+      alt: "Restaurant Interior with Red Seating",
+    },
+    {
+      id: 7,
+      category: "restaurant",
+      url: "/lovable-uploads/a604402a-0fb2-47c7-8cc5-3092109063dd.png",
+      alt: "Restaurant Lounge Area",
+    },
+    {
+      id: 8,
+      category: "restaurant",
+      url: "/lovable-uploads/d872671b-d745-434f-a42b-b65834d1ed68.png",
+      alt: "Restaurant Seating Area",
+    },
+    // Barbershop images
+    {
+      id: 9,
       category: "barbershop",
       url: "/lovable-uploads/9360b9e9-30e1-4319-8db0-968661e99207.png",
       alt: "Barbershop Interior",
     },
     {
-      id: 7,
+      id: 10,
       category: "barbershop",
       url: "/lovable-uploads/c5fbfe29-4798-4b3f-8f4a-026e7de67497.png",
       alt: "Barbershop Products",
     },
     // Perfumes & Shisha images
     {
-      id: 8,
+      id: 11,
       category: "perfumes",
       url: "/lovable-uploads/e8bac841-0a55-4ef6-be6d-f24cbc468ab1.png",
       alt: "Perfume Display",
     },
     {
-      id: 9,
+      id: 12,
       category: "perfumes",
       url: "/lovable-uploads/ffad6fca-7d8f-47fc-9f1a-fd9afbc2885b.png",
       alt: "Shisha Collection",
     },
     {
-      id: 10,
+      id: 13,
       category: "perfumes",
       url: "/lovable-uploads/ad681f73-a6fa-48ca-90ac-12c051f1ba0a.png",
       alt: "Shisha Display",
