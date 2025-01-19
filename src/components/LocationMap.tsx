@@ -1,39 +1,27 @@
-import React, { useEffect, useRef } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const LocationMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
+  const center = {
+    lat: -33.9076,
+    lng: 18.5516
+  };
 
-  useEffect(() => {
-    if (!mapContainer.current) return;
-
-    // Initialize map
-    mapboxgl.accessToken = 'pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbHNxOWF2NmowMGRqMmpxdDV5Y2JqZWNhIn0.Abnr_Bty2UIMOHxuVVJvtQ';
-    
-    const map = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/streets-v12',
-      center: [18.5516, -33.9076], // Coordinates for Goodwood, Cape Town
-      zoom: 15
-    });
-
-    const marker = new mapboxgl.Marker();
-
-    map.once('load', () => {
-      marker.setLngLat([18.5516, -33.9076]).addTo(map);
-    });
-
-    // Cleanup
-    return () => {
-      marker.remove();
-      map.remove();
-    };
-  }, []);
+  const mapContainerStyle = {
+    width: '100%',
+    height: '100%'
+  };
 
   return (
     <div className="h-48 rounded-lg overflow-hidden">
-      <div ref={mapContainer} className="w-full h-full" />
+      <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          center={center}
+          zoom={15}
+        >
+          <Marker position={center} />
+        </GoogleMap>
+      </LoadScript>
     </div>
   );
 };
