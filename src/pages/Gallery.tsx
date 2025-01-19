@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import ImageModal from "@/components/ImageModal";
 
 interface GalleryImage {
   id: number;
@@ -10,7 +11,7 @@ interface GalleryImage {
 }
 
 const Gallery = () => {
-  const [images, setImages] = useState<GalleryImage[]>([
+  const [images] = useState<GalleryImage[]>([
     // Restaurant images (including both old and new images)
     {
       id: 1,
@@ -115,10 +116,10 @@ const Gallery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {getImagesByCategory("restaurant").map((image) => (
               <Card key={image.id} className="overflow-hidden">
-                <img
+                <ImageModal
                   src={image.url}
                   alt={image.alt}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover"
                 />
               </Card>
             ))}
@@ -129,10 +130,10 @@ const Gallery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {getImagesByCategory("barbershop").map((image) => (
               <Card key={image.id} className="overflow-hidden">
-                <img
+                <ImageModal
                   src={image.url}
                   alt={image.alt}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover"
                 />
               </Card>
             ))}
@@ -143,10 +144,10 @@ const Gallery = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {getImagesByCategory("perfumes").map((image) => (
               <Card key={image.id} className="overflow-hidden">
-                <img
+                <ImageModal
                   src={image.url}
                   alt={image.alt}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-cover"
                 />
               </Card>
             ))}
