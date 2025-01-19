@@ -4,11 +4,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 const LocationMap = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
-  const mapInstance = useRef<mapboxgl.Map | null>(null);
-  const marker = useRef<mapboxgl.Marker | null>(null);
 
   useEffect(() => {
-    if (!mapContainer.current || mapInstance.current) return;
+    if (!mapContainer.current) return;
 
     // Initialize map
     mapboxgl.accessToken = 'pk.eyJ1IjoibG92YWJsZSIsImEiOiJjbHNxOWF2NmowMGRqMmpxdDV5Y2JqZWNhIn0.Abnr_Bty2UIMOHxuVVJvtQ';
@@ -17,31 +15,19 @@ const LocationMap = () => {
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [18.5516, -33.9076], // Coordinates for Goodwood, Cape Town
-      zoom: 15,
-      preserveDrawingBuffer: true
+      zoom: 15
     });
 
-    mapInstance.current = map;
+    const marker = new mapboxgl.Marker();
 
-    // Add marker after map loads
-    map.on('load', () => {
-      if (marker.current) return;
-      
-      marker.current = new mapboxgl.Marker()
-        .setLngLat([18.5516, -33.9076])
-        .addTo(map);
+    map.once('load', () => {
+      marker.setLngLat([18.5516, -33.9076]).addTo(map);
     });
 
     // Cleanup
     return () => {
-      if (marker.current) {
-        marker.current.remove();
-        marker.current = null;
-      }
-      if (mapInstance.current) {
-        mapInstance.current.remove();
-        mapInstance.current = null;
-      }
+      marker.remove();
+      map.remove();
     };
   }, []);
 
