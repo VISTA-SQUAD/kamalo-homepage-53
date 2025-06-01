@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const Perfumes = () => {
   const faqs = [
     {
-      question: "What types of perfumes do you sell?",
-      answer: "We offer a curated selection of unique and exotic perfumes, including African-inspired scents, international brands, and exclusive fragrances you won't find elsewhere."
+      question: "What kind of perfumes do you sell?",
+      answer: "Long-lasting, designer-inspired scents for men and women."
     },
     {
-      question: "Can I test perfumes before buying?",
-      answer: "Absolutely! We encourage customers to test our fragrances before purchase. Our staff can help you find the perfect scent that matches your personality."
+      question: "Are these perfumes available online?",
+      answer: "Currently in-store only, but we're working on online orders."
     },
     {
-      question: "Do you offer gift wrapping?",
-      answer: "Yes, we provide beautiful gift wrapping services perfect for special occasions. Let us know if you're purchasing a gift and we'll make it extra special."
+      question: "Can I try a perfume before I buy?",
+      answer: "Yes — testers available on all products."
     },
     {
-      question: "Are your perfumes authentic?",
-      answer: "All our perfumes are 100% authentic and sourced directly from reputable suppliers. We guarantee the quality and authenticity of every fragrance we sell."
+      question: "What are the best-selling scents?",
+      answer: "Oud, vanilla musk, and fresh floral blends are most popular."
+    },
+    {
+      question: "Are the perfumes oil or alcohol based?",
+      answer: "Most are oil-based for lasting fragrance."
+    },
+    {
+      question: "Can I get a custom scent made?",
+      answer: "Not yet — but custom kits are coming soon."
+    },
+    {
+      question: "Do you offer bundles or gift sets?",
+      answer: "Yes — combo discounts available in-store."
+    },
+    {
+      question: "Where in the restaurant are they sold?",
+      answer: "At the front desk near the main entrance."
     }
   ];
 
@@ -32,10 +48,10 @@ const Perfumes = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Exotic</span> Perfumes
+              <span className="text-kamalo-red">Designer-Inspired</span> Fragrances
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover your signature scent with our exclusive collection of unique and exotic perfumes from around the world.
+              Find your signature scent at Kamalo City. We stock a rotating collection of designer-inspired perfumes that are long-lasting, oil-based, and ultra-affordable.
             </p>
           </div>
 
@@ -49,30 +65,30 @@ const Perfumes = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Signature Scents</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Designer-Inspired Fragrances in Cape Town</h2>
               <p className="text-gray-300 mb-4">
-                Step into our carefully curated world of fragrances where each perfume tells a story. Our collection features unique and exotic scents that capture the essence of different cultures and traditions, with a special focus on African-inspired fragrances.
+                Perfect for gifts or personal use, our fragrances are available right inside our restaurant for convenient shopping in Goodwood, Cape Town. Our collection features long-lasting, oil-based scents that rival expensive designer brands.
               </p>
               <p className="text-gray-300 mb-6">
-                Whether you're looking for something bold and adventurous or subtle and elegant, our perfume collection offers something special for every personality and occasion.
+                Located at the front desk near our main entrance, you can test and purchase your perfect scent while enjoying the full Kamalo City experience.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <Wind className="w-6 h-6 text-kamalo-red" />
-                  <span>Exotic Scents</span>
+                  <span>Oil-Based</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Star className="w-6 h-6 text-kamalo-red" />
-                  <span>Premium Quality</span>
+                  <span>Long-Lasting</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Gift className="w-6 h-6 text-kamalo-red" />
-                  <span>Gift Wrapping</span>
+                  <span>Gift Sets</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Sparkles className="w-6 h-6 text-kamalo-red" />
-                  <span>Unique Selection</span>
+                  <span>Test Available</span>
                 </div>
               </div>
             </div>
@@ -80,60 +96,60 @@ const Perfumes = () => {
 
           {/* Fragrance Categories */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Fragrance Collection</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Popular Scent Categories</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Wind className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">African Heritage</h3>
-                <p className="text-gray-300">Traditional scents inspired by African botanicals and spices</p>
+                <h3 className="text-xl font-bold mb-3">Oud Blends</h3>
+                <p className="text-gray-300">Rich, exotic Middle Eastern inspired fragrances</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Sparkles className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Oriental Blends</h3>
-                <p className="text-gray-300">Rich, exotic fragrances from the Middle East and Asia</p>
+                <h3 className="text-xl font-bold mb-3">Vanilla Musk</h3>
+                <p className="text-gray-300">Warm, comforting scents perfect for everyday wear</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Star className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Designer Brands</h3>
-                <p className="text-gray-300">International luxury and niche fragrance houses</p>
+                <h3 className="text-xl font-bold mb-3">Fresh Florals</h3>
+                <p className="text-gray-300">Light, elegant scents for any occasion</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Gift className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Unisex Options</h3>
-                <p className="text-gray-300">Versatile fragrances perfect for anyone</p>
+                <h3 className="text-xl font-bold mb-3">Designer Dupes</h3>
+                <p className="text-gray-300">Affordable alternatives to luxury brands</p>
               </div>
             </div>
           </div>
 
-          {/* Featured Collections */}
+          {/* Best Sellers */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Featured Collections</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Best-Selling Fragrances</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-4">Spice Route Collection</h3>
-                <p className="text-gray-300 mb-4">Journey through the ancient spice routes with fragrances featuring cardamom, saffron, and exotic woods.</p>
+                <h3 className="text-xl font-bold text-kamalo-red mb-4">Signature Oud</h3>
+                <p className="text-gray-300 mb-4">Our most popular oil-based oud blend with long-lasting projection and rich, warm notes.</p>
                 <ul className="text-gray-300 space-y-1">
-                  <li>• Cardamom & Rose</li>
-                  <li>• Saffron Dreams</li>
-                  <li>• Sandalwood Mystique</li>
+                  <li>• Long-lasting formula</li>
+                  <li>• Unisex appeal</li>
+                  <li>• Evening and special occasions</li>
                 </ul>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-4">African Sunset Series</h3>
-                <p className="text-gray-300 mb-4">Capture the magic of African landscapes with these nature-inspired fragrances.</p>
+                <h3 className="text-xl font-bold text-kamalo-red mb-4">Vanilla Musk Gold</h3>
+                <p className="text-gray-300 mb-4">Sweet and sophisticated blend perfect for daily wear with excellent staying power.</p>
                 <ul className="text-gray-300 space-y-1">
-                  <li>• Baobab Breeze</li>
-                  <li>• Savanna Bloom</li>
-                  <li>• Desert Mirage</li>
+                  <li>• Everyday luxury</li>
+                  <li>• Warm and inviting</li>
+                  <li>• Perfect for office wear</li>
                 </ul>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-4">Urban Elegance Line</h3>
-                <p className="text-gray-300 mb-4">Sophisticated scents perfect for the modern professional and city dweller.</p>
+                <h3 className="text-xl font-bold text-kamalo-red mb-4">Fresh Floral Fusion</h3>
+                <p className="text-gray-300 mb-4">Light and airy blend that's fresh yet memorable, ideal for day and casual occasions.</p>
                 <ul className="text-gray-300 space-y-1">
-                  <li>• Metropolitan Musk</li>
-                  <li>• City Lights</li>
-                  <li>• Executive Essence</li>
+                  <li>• Light and fresh</li>
+                  <li>• Perfect for daytime</li>
+                  <li>• Seasonal favorite</li>
                 </ul>
               </div>
             </div>

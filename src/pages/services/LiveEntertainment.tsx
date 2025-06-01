@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const LiveEntertainment = () => {
   const faqs = [
     {
-      question: "What type of entertainment do you offer?",
-      answer: "We host live concerts, DJ performances, cultural nights, karaoke sessions, and special themed events throughout the week."
+      question: "When do you host live music events?",
+      answer: "We host DJs and performances every weekend and on special event nights."
     },
     {
-      question: "How can I find out about upcoming events?",
-      answer: "Follow us on Instagram @kamalo_city or call us directly. We also post event announcements on our social media channels."
+      question: "Is there a cover charge?",
+      answer: "Most nights are free; special guests may have a small entry fee."
     },
     {
-      question: "Is there an entry fee for entertainment nights?",
-      answer: "Entry fees vary depending on the event. Some nights are free with food purchase, while special performances may have a cover charge."
+      question: "What kind of music do you play?",
+      answer: "Amapiano, Afrobeat, house, R&B, and urban African sounds."
     },
     {
-      question: "Can I request specific music or performances?",
-      answer: "Absolutely! We love hearing from our guests. Contact us to discuss your preferences or special requests for upcoming events."
+      question: "Can I reserve a table during events?",
+      answer: "Yes — VIP and general table reservations are available."
+    },
+    {
+      question: "Do you allow local performers to apply?",
+      answer: "Yes, DM us or email bookings@kamalocity.com."
+    },
+    {
+      question: "Is it safe and secure to party at Kamalo City?",
+      answer: "Absolutely — we have onsite security and controlled entry."
+    },
+    {
+      question: "Can we dance and party, or is it just seated?",
+      answer: "Both! There's room to dance, vibe, or chill."
+    },
+    {
+      question: "Do you serve food during live shows?",
+      answer: "Yes — full menu and drinks available throughout."
     }
   ];
 
@@ -32,10 +48,10 @@ const LiveEntertainment = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Live</span> Entertainment
+              <span className="text-kamalo-red">Amapiano, Afrobeat</span> & Local Performances
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the vibrant culture and energy of Kamalo City with our exciting live entertainment, concerts, and cultural events.
+              Experience Cape Town nightlife at its best with Kamalo City's live entertainment nights. From Afrobeat and Amapiano DJs to rising local artists, our stage hosts high-energy performances every weekend.
             </p>
           </div>
 
@@ -49,30 +65,30 @@ const LiveEntertainment = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Unforgettable Nights</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Cape Town Nightlife at Its Best</h2>
               <p className="text-gray-300 mb-4">
-                Immerse yourself in the rich cultural tapestry of African entertainment at Kamalo City. Our venue comes alive with the sounds of live music, energetic performances, and cultural celebrations that showcase the best of African heritage.
+                Grab dinner, smoke hookah, and enjoy a night of culture, music, and food in Goodwood's most vibrant venue. Our entertainment program showcases the best of local talent and international sounds.
               </p>
               <p className="text-gray-300 mb-6">
-                From intimate acoustic sessions to high-energy concerts, our entertainment program offers something for everyone looking to experience authentic African culture and modern entertainment.
+                From intimate acoustic sessions to high-energy dance nights, we create an atmosphere where music, culture, and community come together for unforgettable experiences.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <Music className="w-6 h-6 text-kamalo-red" />
-                  <span>Live Concerts</span>
+                  <span>Weekend Shows</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mic className="w-6 h-6 text-kamalo-red" />
-                  <span>DJ Nights</span>
+                  <span>Local Artists</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>Cultural Events</span>
+                  <span>Dance Floor</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Calendar className="w-6 h-6 text-kamalo-red" />
-                  <span>Weekly Shows</span>
+                  <span>Special Events</span>
                 </div>
               </div>
             </div>
@@ -84,23 +100,23 @@ const LiveEntertainment = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Music className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Live Music</h3>
-                <p className="text-gray-300">Local and international artists performing African and contemporary music</p>
+                <h3 className="text-xl font-bold mb-3">Amapiano</h3>
+                <p className="text-gray-300">The hottest South African sound with top local DJs</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Mic className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">DJ Sets</h3>
-                <p className="text-gray-300">Professional DJs spinning the latest hits and classic favorites</p>
+                <h3 className="text-xl font-bold mb-3">Afrobeat</h3>
+                <p className="text-gray-300">Contemporary African rhythms and international hits</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Cultural Nights</h3>
-                <p className="text-gray-300">Celebrate African heritage with traditional performances and modern fusion</p>
+                <h3 className="text-xl font-bold mb-3">Live Performances</h3>
+                <p className="text-gray-300">Rising local artists and special guest appearances</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Calendar className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Special Events</h3>
-                <p className="text-gray-300">Holiday celebrations, themed parties, and community gatherings</p>
+                <h3 className="text-xl font-bold mb-3">Urban Sounds</h3>
+                <p className="text-gray-300">House, R&B, and contemporary African music</p>
               </div>
             </div>
           </div>
@@ -112,15 +128,15 @@ const LiveEntertainment = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
                   <h3 className="text-lg font-bold text-kamalo-red mb-2">Friday Nights</h3>
-                  <p className="text-gray-300">Live DJ sets and dance music</p>
+                  <p className="text-gray-300">Amapiano DJs and dance vibes</p>
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-bold text-kamalo-red mb-2">Saturday Evenings</h3>
-                  <p className="text-gray-300">Live performances and cultural shows</p>
+                  <p className="text-gray-300">Live performances and special guests</p>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-kamalo-red mb-2">Sunday Sessions</h3>
-                  <p className="text-gray-300">Acoustic music and chill vibes</p>
+                  <h3 className="text-lg font-bold text-kamalo-red mb-2">Special Events</h3>
+                  <p className="text-gray-300">Rising local artists and featured acts</p>
                 </div>
               </div>
             </div>

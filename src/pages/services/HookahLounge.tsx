@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const HookahLounge = () => {
   const faqs = [
     {
-      question: "What hookah flavors do you offer?",
-      answer: "We offer a wide variety of premium hookah flavors including fruit, mint, dessert, and exotic blends. Our selection includes popular brands and unique house mixes."
+      question: "Where can I smoke hookah in Cape Town?",
+      answer: "Kamalo City in Goodwood offers premium shisha with a full food and music experience."
     },
     {
-      question: "Do I need to make a reservation for hookah?",
-      answer: "While walk-ins are welcome, we recommend making a reservation especially during peak hours and weekends to ensure availability."
+      question: "What flavors of hookah do you have?",
+      answer: "We offer mint, double apple, blueberry, mango, and seasonal blends."
     },
     {
-      question: "What are your hookah lounge hours?",
-      answer: "Our hookah lounge is open 7 days a week from 11:00 AM to 11:00 PM, same as our restaurant hours."
+      question: "Is the hookah lounge open every night?",
+      answer: "Yes, our hookah lounge operates during all restaurant hours, 7 days a week."
     },
     {
-      question: "Can I share a hookah with friends?",
-      answer: "Absolutely! Our hookahs are perfect for sharing. We provide multiple hoses and mouthpieces for a hygienic and enjoyable experience."
+      question: "Do you need ID to enter the hookah section?",
+      answer: "Yes, it's 18+ only in the smoking area."
+    },
+    {
+      question: "Can I book a table in the lounge?",
+      answer: "Absolutely — we recommend reservations on weekends."
+    },
+    {
+      question: "Do you serve alcohol or mocktails with hookah?",
+      answer: "Yes, we have mocktails and bar-style drinks to pair with your session."
+    },
+    {
+      question: "Is there music or entertainment while smoking?",
+      answer: "Yes, DJs or playlists run most evenings for a lively vibe."
+    },
+    {
+      question: "Is there a smoking area outside too?",
+      answer: "Our hookah experience is indoor with proper ventilation, but outdoor seating is available."
     }
   ];
 
@@ -32,10 +48,10 @@ const HookahLounge = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Hookah</span> Lounge
+              Cape Town <span className="text-kamalo-red">Shisha Experience</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Relax and unwind in our premium hookah lounge with authentic flavors and a comfortable atmosphere perfect for socializing.
+              Discover one of Cape Town's top-rated hookah lounges at Kamalo City in Goodwood. Our shisha bar offers a premium selection of flavored hookah pipes in a lively, music-driven setting.
             </p>
           </div>
 
@@ -51,10 +67,10 @@ const HookahLounge = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Premium Hookah Experience</h2>
               <p className="text-gray-300 mb-4">
-                Step into our authentic hookah lounge where tradition meets modern comfort. We offer premium quality shisha with a wide variety of flavors in a relaxed, social atmosphere.
+                From double apple to mint grape, enjoy smooth, rich smoke while vibing to Afrobeat and Amapiano beats. Whether you're out with friends or starting your night right, our lounge is the perfect chill spot.
               </p>
               <p className="text-gray-300 mb-6">
-                Whether you're looking to unwind after a long day or socialize with friends, our hookah lounge provides the perfect setting with comfortable seating and excellent service.
+                Our hookah lounge combines traditional flavors with modern atmosphere, creating an authentic Cape Town nightlife experience that keeps you coming back for more.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -64,7 +80,7 @@ const HookahLounge = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>Group Friendly</span>
+                  <span>18+ Only</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="w-6 h-6 text-kamalo-red" />
@@ -72,7 +88,7 @@ const HookahLounge = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Shield className="w-6 h-6 text-kamalo-red" />
-                  <span>Hygienic Setup</span>
+                  <span>Safe Environment</span>
                 </div>
               </div>
             </div>
@@ -85,17 +101,17 @@ const HookahLounge = () => {
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Wind className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Premium Shisha</h3>
-                <p className="text-gray-300">High-quality tobacco and herbal blends from trusted brands</p>
+                <p className="text-gray-300">Mint, double apple, blueberry, mango, and seasonal blends</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Social Atmosphere</h3>
-                <p className="text-gray-300">Perfect setting for friends and groups to relax together</p>
+                <h3 className="text-xl font-bold mb-3">Music & Vibes</h3>
+                <p className="text-gray-300">DJs and playlists featuring Afrobeat and Amapiano</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Shield className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Clean & Safe</h3>
-                <p className="text-gray-300">Hygienic preparation and individual mouthpieces</p>
+                <h3 className="text-xl font-bold mb-3">Drinks & Food</h3>
+                <p className="text-gray-300">Mocktails and bar-style drinks with full menu available</p>
               </div>
             </div>
           </div>

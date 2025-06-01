@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const PrivateBookings = () => {
   const faqs = [
     {
-      question: "What is the minimum group size for private bookings?",
-      answer: "We accommodate private bookings for groups of 15 or more people. For smaller groups, we recommend our regular reservation system."
+      question: "How do I book Kamalo City for a private event?",
+      answer: "Just contact us via our website or WhatsApp to check availability and rates."
+    },
+    {
+      question: "How many guests can the venue handle?",
+      answer: "Our space comfortably hosts 80–100 people seated or up to 120 standing."
+    },
+    {
+      question: "What kind of events do you host?",
+      answer: "Birthdays, work functions, album launches, bridal showers, and more."
+    },
+    {
+      question: "Is music and sound included in the booking?",
+      answer: "Yes, we offer DJ booth access and house sound systems."
+    },
+    {
+      question: "Can I bring outside food or décor?",
+      answer: "We provide full catering and can work with your décor team."
+    },
+    {
+      question: "Do you allow photographers or videographers?",
+      answer: "Yes, professional media teams are welcome."
+    },
+    {
+      question: "Are kids allowed during private functions?",
+      answer: "Yes — you can tailor the experience to include families."
     },
     {
       question: "How far in advance should I book?",
-      answer: "We recommend booking at least 2-3 weeks in advance, especially for weekends and special occasions. However, we'll do our best to accommodate last-minute requests."
-    },
-    {
-      question: "What's included in a private booking?",
-      answer: "Private bookings include exclusive use of our venue, dedicated staff, customized menu options, and special decorations upon request."
-    },
-    {
-      question: "Can I bring my own decorations or entertainment?",
-      answer: "Yes! We welcome personal touches. Please discuss your requirements with our events team to ensure everything aligns with our venue policies."
+      answer: "We recommend at least 2–3 weeks notice for weekend events."
     }
   ];
 
@@ -32,10 +48,10 @@ const PrivateBookings = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Private</span> Bookings
+              <span className="text-kamalo-red">Private</span> Venue Hire
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Make your special occasion unforgettable with exclusive access to Kamalo City for your private events and celebrations.
+              Searching for a private event venue in Cape Town? Kamalo City offers full restaurant hire for birthdays, business events, album launches, or private parties.
             </p>
           </div>
 
@@ -49,30 +65,30 @@ const PrivateBookings = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Exclusive Venue Hire</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Full Venue Hire for Events</h2>
               <p className="text-gray-300 mb-4">
-                Transform Kamalo City into your private celebration space. Whether it's a birthday party, corporate event, wedding reception, or family gathering, we provide the perfect setting for your special occasion.
+                Located in Goodwood, we provide full catering, music systems, décor options, and custom menus — all in a stylish, vibrant environment ideal for social or formal occasions.
               </p>
               <p className="text-gray-300 mb-6">
-                Our dedicated events team will work with you to customize every detail, from menu selection to decorations, ensuring your event is exactly as you envisioned.
+                Our space comfortably hosts 80–100 people seated or up to 120 standing, making it perfect for intimate gatherings or larger celebrations that need that special touch.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>15+ Guests</span>
+                  <span>80-120 Guests</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Calendar className="w-6 h-6 text-kamalo-red" />
-                  <span>Flexible Timing</span>
+                  <span>Custom Events</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Star className="w-6 h-6 text-kamalo-red" />
-                  <span>Custom Menus</span>
+                  <span>Full Catering</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-6 h-6 text-kamalo-red" />
-                  <span>Exclusive Access</span>
+                  <span>Sound Systems</span>
                 </div>
               </div>
             </div>
@@ -87,16 +103,16 @@ const PrivateBookings = () => {
                 <p className="text-gray-300">Celebrate another year with style and great food</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Corporate Events</h3>
-                <p className="text-gray-300">Team building and business celebrations</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Work Functions</h3>
+                <p className="text-gray-300">Corporate events and team building experiences</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Wedding Receptions</h3>
-                <p className="text-gray-300">Beautiful setting for your special day</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Album Launches</h3>
+                <p className="text-gray-300">Music industry events with full AV support</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Family Gatherings</h3>
-                <p className="text-gray-300">Reunions and family celebrations</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Bridal Showers</h3>
+                <p className="text-gray-300">Elegant celebrations for special occasions</p>
               </div>
             </div>
           </div>

@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const GameNights = () => {
   const faqs = [
     {
-      question: "When will tournaments start?",
-      answer: "We're currently setting up our tournament infrastructure and expect to launch our first gaming tournaments in the coming months. Follow us on Instagram for announcements!"
+      question: "When will game nights start?",
+      answer: "We're currently organizing our game night program and expect to launch soon. Follow us on Instagram for announcements!"
     },
     {
       question: "What types of games will be featured?",
-      answer: "We're planning a mix of popular games including FIFA, racing games, fighting games, and potentially some retro arcade classics. Community input will help shape our final lineup."
+      answer: "We're planning classics like chess, dominoes, Uno, cards, and more based on community interest."
     },
     {
-      question: "Do I need to bring my own controller?",
-      answer: "We'll provide all necessary gaming equipment, but you're welcome to bring your own controller if you prefer. We'll have details about equipment policies when we launch."
+      question: "Do I need to bring my own games?",
+      answer: "We'll provide all games and equipment, but you're welcome to bring favorites to share."
     },
     {
       question: "Will there be prizes for winners?",
-      answer: "Absolutely! We're planning exciting prizes for tournament winners including cash prizes, vouchers, and special recognition. Prize details will be announced with each tournament."
+      answer: "Yes! We're planning exciting prizes for tournament winners including vouchers, recognition, and special rewards."
+    },
+    {
+      question: "Is it beginner-friendly?",
+      answer: "Absolutely! All skill levels are welcome, from complete beginners to experienced players."
+    },
+    {
+      question: "Can I suggest games to include?",
+      answer: "Yes! We want community input to shape our game selection and tournament formats."
+    },
+    {
+      question: "Will food and drinks be available?",
+      answer: "Yes — full menu and drinks available throughout all game nights and tournaments."
+    },
+    {
+      question: "How do I stay updated on game night announcements?",
+      answer: "Follow us on Instagram @kamalo_city or call us for the latest updates on launch dates."
     }
   ];
 
@@ -32,13 +48,13 @@ const GameNights = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Game Nights</span> & Tournaments
+              <span className="text-kamalo-red">Game Nights</span> & Social Tournaments
             </h1>
             <div className="bg-kamalo-red text-white px-6 py-2 rounded-full text-lg font-semibold inline-block mb-6">
               Coming Soon!
             </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get ready for exciting gaming tournaments and competitive events at Kamalo City. The ultimate gaming experience is coming soon!
+              Looking for a fun night out that's more than just dinner and drinks? Kamalo City is preparing to host social game nights and casual tournaments — featuring classics like chess, dominoes, Uno, cards, and more.
             </p>
           </div>
 
@@ -47,17 +63,17 @@ const GameNights = () => {
             <div>
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
-                alt="Gaming Tournament"
+                alt="Game Night"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Competitive Gaming Hub</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Chess, Dominoes & Social Tournaments</h2>
               <p className="text-gray-300 mb-4">
-                Kamalo City is preparing to become Cape Town's premier destination for competitive gaming and esports tournaments. We're creating a space where gamers of all skill levels can compete, connect, and celebrate their passion for gaming.
+                Whether you're a competitive spirit or just want to chill with friends in a vibey environment, our game tournaments blend the energy of nightlife with the strategy of timeless games.
               </p>
               <p className="text-gray-300 mb-6">
-                From casual game nights to serious competitive tournaments, we're building something special for the gaming community. Stay tuned for updates on our launch!
+                Join us for a night of food, music, and friendly competition — no experience required. Located in Goodwood, Cape Town, Kamalo City is where culture, connection, and creativity meet.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -67,15 +83,15 @@ const GameNights = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>Community Events</span>
+                  <span>All Skill Levels</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Gamepad2 className="w-6 h-6 text-kamalo-red" />
-                  <span>Multiple Games</span>
+                  <span>Classic Games</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Calendar className="w-6 h-6 text-kamalo-red" />
-                  <span>Regular Events</span>
+                  <span>Social Events</span>
                 </div>
               </div>
             </div>
@@ -87,18 +103,18 @@ const GameNights = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Trophy className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Monthly Tournaments</h3>
-                <p className="text-gray-300">Regular competitive events with exciting prizes and recognition</p>
+                <h3 className="text-xl font-bold mb-3">Weekly Tournaments</h3>
+                <p className="text-gray-300">Regular competitive events with prizes and recognition</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Gaming Leagues</h3>
-                <p className="text-gray-300">Organized leagues for ongoing competitive play</p>
+                <h3 className="text-xl font-bold mb-3">Social Game Nights</h3>
+                <p className="text-gray-300">Casual gaming sessions for fun and connection</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Gamepad2 className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Casual Game Nights</h3>
-                <p className="text-gray-300">Relaxed gaming sessions for fun and socializing</p>
+                <h3 className="text-xl font-bold mb-3">Classic Board Games</h3>
+                <p className="text-gray-300">Traditional games that bring people together</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Calendar className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
@@ -110,58 +126,58 @@ const GameNights = () => {
 
           {/* Gaming Categories */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Planned Gaming Categories</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Planned Game Categories</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-3">Sports Games</h3>
+                <h3 className="text-xl font-bold text-kamalo-red mb-3">Strategy Games</h3>
                 <ul className="text-gray-300 space-y-2">
-                  <li>• FIFA Championships</li>
-                  <li>• Basketball Tournaments</li>
-                  <li>• Racing Competitions</li>
+                  <li>• Chess Championships</li>
+                  <li>• Checkers Tournaments</li>
+                  <li>• Strategic Board Games</li>
                 </ul>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-3">Fighting Games</h3>
+                <h3 className="text-xl font-bold text-kamalo-red mb-3">Traditional Games</h3>
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Street Fighter Battles</li>
-                  <li>• Tekken Tournaments</li>
-                  <li>• Mortal Kombat Events</li>
+                  <li>• Dominoes Competitions</li>
+                  <li>• Card Game Nights</li>
+                  <li>• Local African Games</li>
                 </ul>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-xl font-bold text-kamalo-red mb-3">Classic Arcade</h3>
+                <h3 className="text-xl font-bold text-kamalo-red mb-3">Party Games</h3>
                 <ul className="text-gray-300 space-y-2">
-                  <li>• Retro Game Nights</li>
-                  <li>• High Score Challenges</li>
-                  <li>• Nostalgia Tournaments</li>
+                  <li>• Uno Tournaments</li>
+                  <li>• Group Card Games</li>
+                  <li>• Social Party Games</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Registration Interest */}
+          {/* Pre-Launch Interest */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Pre-Registration Interest</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Pre-Launch Interest</h2>
             <div className="bg-black/50 rounded-lg p-8 text-center max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold text-kamalo-red mb-4">Be the First to Know!</h3>
               <p className="text-gray-300 mb-6">
-                Want to be notified when we launch our gaming tournaments? Give us a call or follow us on Instagram to stay updated on our gaming program development.
+                Want to be notified when we launch our game nights? Give us a call or follow us on Instagram to stay updated on our gaming program development.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-kamalo-dark border border-kamalo-red rounded-lg p-4">
-                  <h4 className="font-bold text-kamalo-red mb-2">Early Bird Benefits</h4>
+                  <h4 className="font-bold text-kamalo-red mb-2">Early Access Benefits</h4>
                   <ul className="text-gray-300 text-sm space-y-1">
                     <li>• Priority tournament registration</li>
-                    <li>• Exclusive practice sessions</li>
-                    <li>• Special founding member perks</li>
+                    <li>• Exclusive practice nights</li>
+                    <li>• Input on game selection</li>
                   </ul>
                 </div>
                 <div className="bg-kamalo-dark border border-kamalo-red rounded-lg p-4">
-                  <h4 className="font-bold text-kamalo-red mb-2">Community Input</h4>
+                  <h4 className="font-bold text-kamalo-red mb-2">Community Building</h4>
                   <ul className="text-gray-300 text-sm space-y-1">
-                    <li>• Vote on tournament formats</li>
-                    <li>• Suggest game titles</li>
-                    <li>• Help shape our gaming rules</li>
+                    <li>• Help shape tournament rules</li>
+                    <li>• Suggest favorite games</li>
+                    <li>• Connect with fellow gamers</li>
                   </ul>
                 </div>
               </div>
@@ -184,10 +200,10 @@ const GameNights = () => {
           {/* Call to Action */}
           <div className="text-center bg-black/50 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-white mb-4">
-              Ready to <span className="text-kamalo-red">Level Up</span>?
+              Ready to <span className="text-kamalo-red">Join the Games</span>?
             </h2>
             <p className="text-gray-300 mb-6">
-              Stay connected with Kamalo City for the latest updates on our gaming tournament launch!
+              Stay connected with Kamalo City for the latest updates on our game night launch!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

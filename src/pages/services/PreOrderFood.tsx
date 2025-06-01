@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const PreOrderFood = () => {
   const faqs = [
     {
-      question: "How far in advance can I place an order?",
-      answer: "You can place pre-orders up to 3 days in advance. We recommend ordering at least 2 hours ahead for same-day pickup to ensure your food is ready when you arrive."
+      question: "How do I pre-order food from Kamalo City?",
+      answer: "Via WhatsApp, website form, or call us directly."
     },
     {
-      question: "Is delivery available?",
-      answer: "Delivery service is coming soon! Currently, we offer pickup only. Stay tuned for updates on our delivery launch."
+      question: "Can I pre-order for a group or office lunch?",
+      answer: "Yes — we handle bulk pre-orders with advance notice."
     },
     {
-      question: "How do I pay for my pre-order?",
-      answer: "Payment can be made when you place the order over the phone, or you can pay when you arrive for pickup. We accept cash and card payments."
+      question: "What dishes are available for pre-order?",
+      answer: "Our full menu is open to pre-orders including platters, wings, and grills."
     },
     {
-      question: "Can I modify my order after placing it?",
-      answer: "Yes, you can modify your order up to 1 hour before your scheduled pickup time. Please call us as soon as possible to make changes."
+      question: "Can I customize my order?",
+      answer: "Yes — just add notes when placing your order."
+    },
+    {
+      question: "How do I pay for a pre-order?",
+      answer: "Currently in-store upon pickup; online payments coming soon."
+    },
+    {
+      question: "When is food ready after I order?",
+      answer: "Average prep time is 15–25 mins depending on order size."
+    },
+    {
+      question: "Is delivery available yet?",
+      answer: "Not yet — but launching very soon."
+    },
+    {
+      question: "Can I pre-order for a specific pickup time?",
+      answer: "Yes — let us know your desired pickup time."
     }
   ];
 
@@ -32,10 +48,10 @@ const PreOrderFood = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Pre-Order</span> Food
+              <span className="text-kamalo-red">Pre-Order</span> Fast Pickup & Soon: Delivery
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Skip the wait and ensure your favorite African dishes are ready when you arrive. Order ahead for a seamless dining experience.
+              Skip the line and pre-order your favorite Kamalo City dishes for fast, easy pickup. Our system lets you schedule your order and collect when it's ready — no waiting required.
             </p>
           </div>
 
@@ -49,18 +65,18 @@ const PreOrderFood = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Convenient Ordering</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Fast Pickup & Soon: Delivery</h2>
               <p className="text-gray-300 mb-4">
-                Make your Kamalo City experience even more convenient with our pre-order service. Call ahead to place your order and have your favorite authentic African dishes prepared fresh and ready for pickup at your preferred time.
+                Delivery service is coming soon, making it easier to enjoy Cape Town's best Afro-fusion meals from home. Perfect for busy schedules, office lunch orders, or when you want to ensure your meal is ready without any waiting time.
               </p>
               <p className="text-gray-300 mb-6">
-                Perfect for busy schedules, office lunch orders, or when you want to ensure your meal is ready without any waiting time.
+                Our pre-order system handles everything from single meals to bulk orders for groups and offices, with average prep times of just 15-25 minutes.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <Clock className="w-6 h-6 text-kamalo-red" />
-                  <span>No Waiting</span>
+                  <span>15-25 Min Prep</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-6 h-6 text-kamalo-red" />
@@ -68,7 +84,7 @@ const PreOrderFood = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-6 h-6 text-kamalo-red" />
-                  <span>Fresh Prepared</span>
+                  <span>Custom Orders</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Truck className="w-6 h-6 text-kamalo-red" />
@@ -84,22 +100,22 @@ const PreOrderFood = () => {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                <h3 className="text-lg font-bold mb-2">Call Us</h3>
-                <p className="text-gray-300">Phone +27 73 159 8909 to place your order</p>
+                <h3 className="text-lg font-bold mb-2">Call or WhatsApp</h3>
+                <p className="text-gray-300">Contact us via WhatsApp or phone to place your order</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                <h3 className="text-lg font-bold mb-2">Choose Items</h3>
-                <p className="text-gray-300">Select from our full menu of authentic dishes</p>
+                <h3 className="text-lg font-bold mb-2">Choose from Full Menu</h3>
+                <p className="text-gray-300">Select from platters, wings, grills, and all menu items</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
                 <h3 className="text-lg font-bold mb-2">Set Pickup Time</h3>
-                <p className="text-gray-300">Choose when you'd like to collect your order</p>
+                <p className="text-gray-300">Choose your preferred collection time</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
-                <h3 className="text-lg font-bold mb-2">Pick Up & Enjoy</h3>
+                <h3 className="text-lg font-bold mb-2">Quick Pickup</h3>
                 <p className="text-gray-300">Arrive and collect your fresh, ready meal</p>
               </div>
             </div>
@@ -110,28 +126,28 @@ const PreOrderFood = () => {
             <h2 className="text-3xl font-bold text-center mb-12">Popular Pre-Order Items</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Jollof Rice Special</h3>
-                <p className="text-gray-300">Our signature jollof rice with your choice of protein</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Signature Platters</h3>
+                <p className="text-gray-300">Mixed grills and combination platters for sharing</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Grilled Chicken Platter</h3>
-                <p className="text-gray-300">Perfectly seasoned grilled chicken with sides</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Wing Specials</h3>
+                <p className="text-gray-300">Famous wings with various African-inspired sauces</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Beef Stew & Rice</h3>
-                <p className="text-gray-300">Tender beef stew served with fragrant rice</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Grilled Selections</h3>
+                <p className="text-gray-300">Fresh grilled meats with traditional sides</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Vegetarian Combo</h3>
-                <p className="text-gray-300">Fresh vegetables and legumes with traditional spices</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Office Lunch Combos</h3>
+                <p className="text-gray-300">Bulk orders perfect for workplace catering</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Fish & Chips African Style</h3>
-                <p className="text-gray-300">Fresh fish with our special African seasoning</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Traditional Mains</h3>
+                <p className="text-gray-300">Authentic African dishes with rice and sides</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Mixed Grill Platter</h3>
-                <p className="text-gray-300">Selection of grilled meats perfect for sharing</p>
+                <h3 className="text-lg font-bold text-kamalo-red mb-2">Family Meals</h3>
+                <p className="text-gray-300">Large portions designed for family sharing</p>
               </div>
             </div>
           </div>

@@ -6,20 +6,36 @@ import Footer from "@/components/Footer";
 const BarberNextDoor = () => {
   const faqs = [
     {
-      question: "Do I need an appointment?",
-      answer: "While walk-ins are welcome, we recommend booking an appointment to avoid waiting, especially during peak hours and weekends."
+      question: "Do I need an appointment for a haircut?",
+      answer: "Walk-ins are welcome — first come, first served."
     },
     {
-      question: "What services do you offer?",
-      answer: "We provide full barbering services including haircuts, beard trims, hot towel shaves, eyebrow grooming, and styling consultation."
+      question: "What styles do they offer?",
+      answer: "Fades, lineups, beard trims, designs, and classic cuts."
     },
     {
-      question: "How long does a typical haircut take?",
-      answer: "A standard haircut takes about 30-45 minutes, while more detailed services like beard trims and styling may take up to an hour."
+      question: "Are the barbers experienced?",
+      answer: "Yes — skilled local professionals who know trending styles."
     },
     {
-      question: "Can I get a haircut while waiting for my food?",
-      answer: "Absolutely! We coordinate with the restaurant so you can enjoy both services during your visit. Just let us know your dining plans."
+      question: "What are the barber's hours?",
+      answer: "Similar to Kamalo City hours, but check in-store for exact times."
+    },
+    {
+      question: "How much do haircuts cost?",
+      answer: "Prices start from R80 and vary by style."
+    },
+    {
+      question: "Can I cut my hair and eat after?",
+      answer: "Yes — you're steps away from food and music."
+    },
+    {
+      question: "Do they accept card payments?",
+      answer: "Yes, cash and card both accepted."
+    },
+    {
+      question: "Is it only men's haircuts?",
+      answer: "Primarily men and boys, but ladies' trims also available."
     }
   ];
 
@@ -35,7 +51,7 @@ const BarberNextDoor = () => {
               <span className="text-kamalo-red">Barber</span> Next Door
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Professional barbering services right next to our restaurant. Get a fresh cut while you wait for your meal or make it a complete grooming experience.
+              Get a fresh fade or sharp lineup before your night out — right next door to Kamalo City. Our partnered barber offers fast, stylish cuts for men and kids. No appointment needed.
             </p>
           </div>
 
@@ -49,12 +65,12 @@ const BarberNextDoor = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Expert Grooming Services</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Quick Haircuts Before the Vibe</h2>
               <p className="text-gray-300 mb-4">
-                Located conveniently next to Kamalo City restaurant, our professional barber shop offers premium grooming services in a comfortable, modern setting. Our experienced barbers combine traditional techniques with contemporary styles.
+                Come for the trim, stay for the food, music, and hookah. It's the ultimate one-stop vibe. Our skilled local professionals know all the trending styles and offer everything from fades to classic cuts.
               </p>
               <p className="text-gray-300 mb-6">
-                Whether you need a quick trim, a complete makeover, or regular maintenance, our skilled barbers will ensure you leave looking and feeling your best.
+                Walk-ins are welcome on a first-come, first-served basis. Prices start from R80, and you're just steps away from enjoying the full Kamalo City experience afterward.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -64,15 +80,15 @@ const BarberNextDoor = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="w-6 h-6 text-kamalo-red" />
-                  <span>Quick Service</span>
+                  <span>Walk-Ins Welcome</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>All Ages Welcome</span>
+                  <span>Men & Kids</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Award className="w-6 h-6 text-kamalo-red" />
-                  <span>Quality Guaranteed</span>
+                  <span>From R80</span>
                 </div>
               </div>
             </div>
@@ -80,37 +96,37 @@ const BarberNextDoor = () => {
 
           {/* Services Offered */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Services Offered</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Scissors className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Haircuts</h3>
-                <p className="text-gray-300">Classic and modern cuts for all hair types and styles</p>
+                <h3 className="text-xl font-bold mb-3">Fades & Lineups</h3>
+                <p className="text-gray-300">Fresh fades and sharp lineups for the modern look</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Beard Grooming</h3>
-                <p className="text-gray-300">Professional beard trims, shaping, and styling</p>
+                <h3 className="text-xl font-bold mb-3">Beard Trims</h3>
+                <p className="text-gray-300">Professional beard grooming and styling</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Award className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Hot Towel Shaves</h3>
-                <p className="text-gray-300">Traditional straight razor shaves with hot towel treatment</p>
+                <h3 className="text-xl font-bold mb-3">Hair Designs</h3>
+                <p className="text-gray-300">Creative designs and artistic hair patterns</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Clock className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Express Cuts</h3>
-                <p className="text-gray-300">Quick touch-ups and maintenance cuts</p>
+                <h3 className="text-xl font-bold mb-3">Classic Cuts</h3>
+                <p className="text-gray-300">Traditional styles and timeless looks</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Scissors className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Eyebrow Trim</h3>
-                <p className="text-gray-300">Precision eyebrow grooming and shaping</p>
+                <h3 className="text-xl font-bold mb-3">Kids' Cuts</h3>
+                <p className="text-gray-300">Special attention for younger clients</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Style Consultation</h3>
-                <p className="text-gray-300">Expert advice on the best look for you</p>
+                <h3 className="text-xl font-bold mb-3">Ladies' Trims</h3>
+                <p className="text-gray-300">Basic trimming services for women</p>
               </div>
             </div>
           </div>
@@ -121,32 +137,28 @@ const BarberNextDoor = () => {
             <div className="bg-black/50 rounded-lg p-8 max-w-2xl mx-auto">
               <div className="space-y-4">
                 <div className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="text-white">Basic Haircut</span>
-                  <span className="text-kamalo-red font-bold">R80 - R120</span>
+                  <span className="text-white">Basic Cut</span>
+                  <span className="text-kamalo-red font-bold">From R80</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="text-white">Haircut + Wash</span>
-                  <span className="text-kamalo-red font-bold">R100 - R150</span>
+                  <span className="text-white">Fade & Lineup</span>
+                  <span className="text-kamalo-red font-bold">Varies by style</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-700 pb-2">
                   <span className="text-white">Beard Trim</span>
-                  <span className="text-kamalo-red font-bold">R50 - R80</span>
+                  <span className="text-kamalo-red font-bold">Additional service</span>
                 </div>
                 <div className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="text-white">Hot Towel Shave</span>
-                  <span className="text-kamalo-red font-bold">R80 - R120</span>
-                </div>
-                <div className="flex justify-between border-b border-gray-700 pb-2">
-                  <span className="text-white">Full Service Package</span>
-                  <span className="text-kamalo-red font-bold">R180 - R250</span>
+                  <span className="text-white">Hair Design</span>
+                  <span className="text-kamalo-red font-bold">Custom pricing</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white">Kids Cut (Under 12)</span>
-                  <span className="text-kamalo-red font-bold">R60 - R80</span>
+                  <span className="text-white">Payment Methods</span>
+                  <span className="text-kamalo-red font-bold">Cash & Card</span>
                 </div>
               </div>
               <p className="text-gray-400 text-sm mt-6 text-center">
-                *Prices may vary based on hair length and complexity
+                *Prices may vary based on style complexity
               </p>
             </div>
           </div>
@@ -170,20 +182,20 @@ const BarberNextDoor = () => {
               Ready for a <span className="text-kamalo-red">Fresh Cut</span>?
             </h2>
             <p className="text-gray-300 mb-6">
-              Book your appointment today or visit us for a walk-in service. Professional grooming right next to great food!
+              Walk in for a fresh cut, then stay for the food, music, and vibes. The ultimate one-stop experience!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+27731598909"
                 className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
               >
-                Book Appointment: +27 73 159 8909
+                Call for Hours: +27 73 159 8909
               </a>
               <a
                 href="/menu"
                 className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
-                Grab Food Too
+                Check Out Our Food
               </a>
             </div>
           </div>
