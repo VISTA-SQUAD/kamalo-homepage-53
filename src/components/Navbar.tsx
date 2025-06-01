@@ -1,3 +1,4 @@
+
 import { Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -11,8 +12,8 @@ const Navbar = () => {
         <Link to="/" className="text-white hover:text-kamalo-red transition-colors">
           Home
         </Link>
-        <Link to="/gallery" className="text-white hover:text-kamalo-red transition-colors">
-          Gallery
+        <Link to="/services" className="text-white hover:text-kamalo-red transition-colors">
+          Services
         </Link>
         <Link to="/menu" className="text-white hover:text-kamalo-red transition-colors">
           Menu
