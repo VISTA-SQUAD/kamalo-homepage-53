@@ -10,6 +10,15 @@ import Reservations from "./pages/Reservations";
 import About from "./pages/About";
 import Reviews from "./pages/Reviews";
 
+// Service sub-pages
+import HookahLounge from "./pages/services/HookahLounge";
+import PrivateBookings from "./pages/services/PrivateBookings";
+import LiveEntertainment from "./pages/services/LiveEntertainment";
+import PreOrderFood from "./pages/services/PreOrderFood";
+import Perfumes from "./pages/services/Perfumes";
+import BarberNextDoor from "./pages/services/BarberNextDoor";
+import GameNights from "./pages/services/GameNights";
+
 const queryClient = new QueryClient();
 
 export default () => (
@@ -20,6 +29,13 @@ export default () => (
           <Route path="/" element={<Index />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/hookah-lounge" element={<HookahLounge />} />
+          <Route path="/services/private-bookings" element={<PrivateBookings />} />
+          <Route path="/services/live-entertainment" element={<LiveEntertainment />} />
+          <Route path="/services/pre-order-food" element={<PreOrderFood />} />
+          <Route path="/services/perfumes" element={<Perfumes />} />
+          <Route path="/services/barber-next-door" element={<BarberNextDoor />} />
+          <Route path="/services/game-nights" element={<GameNights />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/about" element={<About />} />
           <Route path="/reviews" element={<Reviews />} />
