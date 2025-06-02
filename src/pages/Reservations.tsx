@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,18 @@ const Reservations = () => {
     <div className="min-h-screen bg-kamalo-dark">
       <Navbar />
       <div className="container mx-auto px-4 pt-24 pb-20">
+        {/* SEO-Optimized Header Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-kamalo-gold mb-6">
+            Reservations at Kamalo City
+          </h1>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+              Planning a special evening or event in Cape Town? Kamalo City offers the perfect venue for your needs. Whether you're looking to reserve a table for an intimate dinner or book the entire venue for occasions like birthdays, parties, or corporate events, we've got you covered. Our team is dedicated to providing an unforgettable experience, complete with exquisite cuisine, vibrant ambiance, and top-notch service. Secure your reservation today and let Kamalo City make your event truly special.
+            </p>
+          </div>
+        </div>
+
         <div className="max-w-2xl mx-auto bg-black rounded-lg p-8 border border-gray-700">
           <p className="text-gray-300 mb-6">Open: 11:00 AM to 10:00 PM, 7 days a week</p>
           
