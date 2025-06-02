@@ -1,9 +1,13 @@
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ActionCards from "@/components/ActionCards";
-import Services from "@/components/Services";
-import Reviews from "@/components/Reviews";
-import Contact from "@/components/Contact";
+import IntroStory from "@/components/IntroStory";
+import AmbiancePreview from "@/components/AmbiancePreview";
+import OurCuisine from "@/components/OurCuisine";
+import LiveEventsServices from "@/components/LiveEventsServices";
+import BookingCTA from "@/components/BookingCTA";
+import GalleryCTA from "@/components/GalleryCTA";
+import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,10 +15,13 @@ const Index = () => {
     <div className="min-h-screen bg-kamalo-dark">
       <Navbar />
       <Hero />
-      <ActionCards />
-      <Services />
-      <Reviews />
-      <Contact />
+      <IntroStory />
+      <AmbiancePreview />
+      <OurCuisine />
+      <LiveEventsServices />
+      <BookingCTA />
+      <GalleryCTA />
+      <MapSection />
       <Footer />
     </div>
   );
