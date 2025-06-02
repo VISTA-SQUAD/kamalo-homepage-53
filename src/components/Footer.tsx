@@ -1,4 +1,3 @@
-
 import { Clock, Phone, MapPin, Instagram } from "lucide-react";
 import LocationMap from "./LocationMap";
 import { Link } from "react-router-dom";
@@ -39,9 +38,6 @@ const Footer = () => {
               <Link to="/" className="block hover:text-kamalo-red transition-colors">Home</Link>
               <Link to="/menu" className="block hover:text-kamalo-red transition-colors">Menu</Link>
               <Link to="/services" className="block hover:text-kamalo-red transition-colors">All Services</Link>
-              <Link to="/services/hookah-lounge" className="block hover:text-kamalo-red transition-colors ml-4">• Hookah Lounge</Link>
-              <Link to="/services/private-bookings" className="block hover:text-kamalo-red transition-colors ml-4">• Private Bookings</Link>
-              <Link to="/services/live-entertainment" className="block hover:text-kamalo-red transition-colors ml-4">• Live Entertainment</Link>
               <Link to="/reservations" className="block hover:text-kamalo-red transition-colors">Reservations</Link>
               <Link to="/about" className="block hover:text-kamalo-red transition-colors">About</Link>
               <Link to="/reviews" className="block hover:text-kamalo-red transition-colors">Reviews</Link>

@@ -155,6 +155,16 @@ const Reservations = () => {
               Confirm via WhatsApp
             </Button>
           </div>
+          
+          <div className="mt-6 text-center">
+            <p className="text-gray-400 text-sm">
+              For any booking clarifications or special requirements, please contact{" "}
+              <a href="tel:+27731598909" className="text-kamalo-gold hover:text-kamalo-red transition-colors">
+                +27 73 159 8909
+              </a>{" "}
+              to ensure your reservation meets all your needs and there are no complications.
+            </p>
+          </div>
         </div>
       </div>
       <Footer />

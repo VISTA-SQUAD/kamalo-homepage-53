@@ -1,4 +1,13 @@
+
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -13,14 +22,41 @@ const Hero = () => {
             unique perfumes, and our welcoming atmosphere in Goodwood.
           </p>
           <div className="flex flex-col md:flex-row gap-4">
-            <Button className="bg-kamalo-red hover:bg-red-600 text-white px-8 py-6 text-lg">
-              See Menu
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="bg-kamalo-red hover:bg-red-600 text-white px-8 py-6 text-lg flex items-center">
+                  See Menu
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-black/95 border-gray-800 mt-2">
+                <DropdownMenuItem asChild>
+                  <Link to="/menu" className="text-white hover:text-kamalo-red transition-colors">
+                    Standard Menu
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/menu/daily-specials" className="text-white hover:text-kamalo-red transition-colors">
+                    Daily Specials
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/menu/vegetable-sides" className="text-white hover:text-kamalo-red transition-colors">
+                    Vegetable Sides
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/menu/sides" className="text-white hover:text-kamalo-red transition-colors">
+                    Sides
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">
               See Our Instagram
             </Button>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
-              Chat with Us
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg">
+              <Link to="/reservations">Make Reservation</Link>
             </Button>
           </div>
         </div>

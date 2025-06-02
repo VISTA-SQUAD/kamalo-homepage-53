@@ -1,4 +1,3 @@
-
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -19,6 +18,11 @@ import Perfumes from "./pages/services/Perfumes";
 import BarberNextDoor from "./pages/services/BarberNextDoor";
 import GameNights from "./pages/services/GameNights";
 
+// Menu sub-pages
+import DailySpecials from "./pages/menu/DailySpecials";
+import VegetableSides from "./pages/menu/VegetableSides";
+import Sides from "./pages/menu/Sides";
+
 const queryClient = new QueryClient();
 
 export default () => (
@@ -28,6 +32,9 @@ export default () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/menu/daily-specials" element={<DailySpecials />} />
+          <Route path="/menu/vegetable-sides" element={<VegetableSides />} />
+          <Route path="/menu/sides" element={<Sides />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/hookah-lounge" element={<HookahLounge />} />
           <Route path="/services/private-bookings" element={<PrivateBookings />} />
