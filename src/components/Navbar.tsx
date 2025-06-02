@@ -66,9 +66,34 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link to="/menu" className="text-white hover:text-kamalo-red transition-colors">
-          Menu
-        </Link>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center text-white hover:text-kamalo-red transition-colors focus:outline-none">
+            Menu
+            <ChevronDown className="ml-1 w-4 h-4" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-black/95 border-gray-800 mt-2">
+            <DropdownMenuItem asChild>
+              <Link to="/menu" className="text-white hover:text-kamalo-red transition-colors">
+                Standard Menu
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/menu/daily-specials" className="text-white hover:text-kamalo-red transition-colors">
+                Daily Specials
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/menu/vegetable-sides" className="text-white hover:text-kamalo-red transition-colors">
+                Vegetable Sides
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/menu/sides" className="text-white hover:text-kamalo-red transition-colors">
+                Sides
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
         <Link to="/reviews" className="text-white hover:text-kamalo-red transition-colors">
           Reviews
         </Link>
