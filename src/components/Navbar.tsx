@@ -94,9 +94,34 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link to="/reviews" className="text-white hover:text-kamalo-red transition-colors">
-          Reviews
-        </Link>
+        <DropdownMenu>
+          <DropdownMenuTrigger className="flex items-center text-white hover:text-kamalo-red transition-colors focus:outline-none">
+            Gallery
+            <ChevronDown className="ml-1 w-4 h-4" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="bg-black/95 border-gray-800 mt-2">
+            <DropdownMenuItem asChild>
+              <Link to="/gallery/restaurant-ambiance" className="text-white hover:text-kamalo-red transition-colors">
+                Restaurant Ambiance
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/gallery/food-and-drinks" className="text-white hover:text-kamalo-red transition-colors">
+                Food & Drinks
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/gallery/events-and-entertainment" className="text-white hover:text-kamalo-red transition-colors">
+                Events & Entertainment
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/gallery/services" className="text-white hover:text-kamalo-red transition-colors">
+                Services (Barbershop, Hookah, Perfumes)
+              </Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
         <Link to="/reservations" className="text-white hover:text-kamalo-red transition-colors">
           Reservations
         </Link>

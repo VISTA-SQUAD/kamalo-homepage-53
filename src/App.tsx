@@ -1,3 +1,4 @@
+
 import { TooltipProvider } from "@/components/ui/tooltip";
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -7,7 +8,7 @@ import Menu from "./pages/Menu";
 import Services from "./pages/Services";
 import Reservations from "./pages/Reservations";
 import About from "./pages/About";
-import Reviews from "./pages/Reviews";
+import Contact from "./pages/Contact";
 
 // Service sub-pages
 import HookahLounge from "./pages/services/HookahLounge";
@@ -22,6 +23,12 @@ import GameNights from "./pages/services/GameNights";
 import DailySpecials from "./pages/menu/DailySpecials";
 import VegetableSides from "./pages/menu/VegetableSides";
 import Sides from "./pages/menu/Sides";
+
+// Gallery sub-pages
+import RestaurantAmbiance from "./pages/gallery/RestaurantAmbiance";
+import FoodAndDrinks from "./pages/gallery/FoodAndDrinks";
+import EventsAndEntertainment from "./pages/gallery/EventsAndEntertainment";
+import ServicesGallery from "./pages/gallery/ServicesGallery";
 
 const queryClient = new QueryClient();
 
@@ -43,9 +50,13 @@ export default () => (
           <Route path="/services/perfumes" element={<Perfumes />} />
           <Route path="/services/barber-next-door" element={<BarberNextDoor />} />
           <Route path="/services/game-nights" element={<GameNights />} />
+          <Route path="/gallery/restaurant-ambiance" element={<RestaurantAmbiance />} />
+          <Route path="/gallery/food-and-drinks" element={<FoodAndDrinks />} />
+          <Route path="/gallery/events-and-entertainment" element={<EventsAndEntertainment />} />
+          <Route path="/gallery/services" element={<ServicesGallery />} />
           <Route path="/reservations" element={<Reservations />} />
           <Route path="/about" element={<About />} />
-          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

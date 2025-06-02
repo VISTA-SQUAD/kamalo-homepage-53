@@ -1,7 +1,5 @@
 
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -28,37 +26,27 @@ const DailySpecials = () => {
           <p className="text-sm text-gray-400 mb-4">Only available on Mondays</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
-              <div className="flex justify-between items-start">
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-medium">Kapenta</h3>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">R 162.00</p>
-                  <p className="text-sm text-gray-300">
-                    Kapenta, cooked in a light tomato sauce. Served with pap and a veg of your choice.
-                  </p>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-lg font-medium">Kapenta</h3>
                 </div>
-                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
-                  <Plus className="h-4 w-4" />
-                </Button>
+                <p className="text-sm text-gray-400 mb-2">R 162.00</p>
+                <p className="text-sm text-gray-300">
+                  Kapenta, cooked in a light tomato sauce. Served with pap and a veg of your choice.
+                </p>
               </div>
             </Card>
 
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
-              <div className="flex justify-between items-start">
-                <div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <h3 className="text-lg font-medium">Ngolo (Cat Fish)</h3>
-                    <Badge className="bg-kamalo-gold">Popular</Badge>
-                  </div>
-                  <p className="text-sm text-gray-400 mb-2">R 162.00</p>
-                  <p className="text-sm text-gray-300">
-                    Cooked ngolo with light green pepper sauce. Served with pap with veg of your choice.
-                  </p>
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-lg font-medium">Ngolo (Cat Fish)</h3>
+                  <Badge className="bg-kamalo-gold">Popular</Badge>
                 </div>
-                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
-                  <Plus className="h-4 w-4" />
-                </Button>
+                <p className="text-sm text-gray-400 mb-2">R 162.00</p>
+                <p className="text-sm text-gray-300">
+                  Cooked ngolo with light green pepper sauce. Served with pap with veg of your choice.
+                </p>
               </div>
             </Card>
           </div>
@@ -70,32 +58,22 @@ const DailySpecials = () => {
           <p className="text-sm text-gray-400 mb-4">Only available on Tuesdays</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-lg font-medium mb-2">Chicken Curry</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 145.00</p>
-                  <p className="text-sm text-gray-300">
-                    Tender chicken pieces cooked in a rich curry sauce. Served with rice or pap.
-                  </p>
-                </div>
-                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
-                  <Plus className="h-4 w-4" />
-                </Button>
+              <div>
+                <h3 className="text-lg font-medium mb-2">Chicken Curry</h3>
+                <p className="text-sm text-gray-400 mb-2">R 145.00</p>
+                <p className="text-sm text-gray-300">
+                  Tender chicken pieces cooked in a rich curry sauce. Served with rice or pap.
+                </p>
               </div>
             </Card>
 
             <Card className="bg-[#1A1F2C] border-gray-800 p-4 text-white">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-lg font-medium mb-2">Vegetable Stir Fry</h3>
-                  <p className="text-sm text-gray-400 mb-2">R 120.00</p>
-                  <p className="text-sm text-gray-300">
-                    A mix of seasonal vegetables stir-fried in a savory sauce. Served with rice.
-                  </p>
-                </div>
-                <Button size="icon" className="bg-kamalo-red hover:bg-red-600">
-                  <Plus className="h-4 w-4" />
-                </Button>
+              <div>
+                <h3 className="text-lg font-medium mb-2">Vegetable Stir Fry</h3>
+                <p className="text-sm text-gray-400 mb-2">R 120.00</p>
+                <p className="text-sm text-gray-300">
+                  A mix of seasonal vegetables stir-fried in a savory sauce. Served with rice.
+                </p>
               </div>
             </Card>
           </div>
