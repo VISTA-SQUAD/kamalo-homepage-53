@@ -10,40 +10,6 @@ import {
 } from "@/components/ui/accordion";
 
 const Services = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [faqVisible, setFaqVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const faqRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    const faqObserver = new IntersectionObserver(
-      ([entry]) => {
-        setFaqVisible(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    if (faqRef.current) {
-      faqObserver.observe(faqRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-      faqObserver.disconnect();
-    };
-  }, []);
-
   const services = [
     {
       id: 1,
@@ -159,7 +125,7 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-kamalo-dark text-white pt-24 px-6">
       <div className="container mx-auto">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-kamalo-red">Services</span>
           </h1>
@@ -168,18 +134,15 @@ const Services = () => {
           </p>
         </div>
 
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service) => {
             const IconComponent = service.icon;
             return (
               <Card 
                 key={service.id} 
                 className={`bg-black/50 border-gray-800 hover:border-kamalo-red transition-all duration-700 ${
                   service.featured ? 'lg:col-span-2' : ''
-                } ${service.comingSoon ? 'opacity-80' : ''} ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                } ${service.comingSoon ? 'opacity-80' : ''}`}
               >
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
@@ -212,7 +175,7 @@ const Services = () => {
         </div>
 
         {/* FAQ Section */}
-        <div ref={faqRef} className={`mb-16 transition-all duration-1000 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="mb-16">
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem 
@@ -237,7 +200,7 @@ const Services = () => {
           </div>
         </div>
 
-        <div className={`text-center transition-all duration-1000 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center">
           <div className="bg-black/50 rounded-lg p-8 border border-gray-800">
             <h2 className="text-2xl font-bold text-white mb-4">
               Ready to Experience <span className="text-kamalo-red">Kamalo City</span>?
