@@ -7,6 +7,7 @@ import OurCuisine from "@/components/OurCuisine";
 import LiveEventsServices from "@/components/LiveEventsServices";
 import BookingCTA from "@/components/BookingCTA";
 import GalleryCTA from "@/components/GalleryCTA";
+import FAQ from "@/components/FAQ";
 import MapSection from "@/components/MapSection";
 import Footer from "@/components/Footer";
 
@@ -21,6 +22,7 @@ const Index = () => {
       <LiveEventsServices />
       <BookingCTA />
       <GalleryCTA />
+      <FAQ />
       <MapSection />
       <Footer />
     </div>
