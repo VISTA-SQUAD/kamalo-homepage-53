@@ -1,8 +1,49 @@
 
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Utensils, Music, Users, Scissors, Wind, Award, Clock, Calendar } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Services = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [faqVisible, setFaqVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    const faqObserver = new IntersectionObserver(
+      ([entry]) => {
+        setFaqVisible(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    if (faqRef.current) {
+      faqObserver.observe(faqRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+      faqObserver.disconnect();
+    };
+  }, []);
+
   const services = [
     {
       id: 1,
@@ -64,10 +105,61 @@ const Services = () => {
     }
   ];
 
+  const faqs = [
+    {
+      question: "What are your opening hours?",
+      answer: "We're open 7 days a week from 11:00 AM to 11:00 PM. Whether you're looking for lunch, dinner, or late-night entertainment, we're here to serve you."
+    },
+    {
+      question: "Do you take reservations?",
+      answer: "Yes! We highly recommend making reservations, especially for weekends and special events. You can book online through our reservations page or call us at +27 73 159 8909."
+    },
+    {
+      question: "What services do you offer besides dining?",
+      answer: "Kamalo City offers a complete experience including premium hookah service, a professional barbershop next door, exotic perfumes, live entertainment, and private event hosting."
+    },
+    {
+      question: "Do you accommodate dietary restrictions?",
+      answer: "Absolutely! We offer vegetarian options and can accommodate various dietary needs. Please inform us about any allergies or special requirements when making your reservation."
+    },
+    {
+      question: "Is there parking available?",
+      answer: "Yes, we have convenient parking available for our guests. We're located at 90 Voortrekker Road in Goodwood, Cape Town, with easy access and parking options."
+    },
+    {
+      question: "Do you host private events?",
+      answer: "Yes! We offer private event hosting for special occasions, celebrations, and corporate events. Contact us to discuss your event needs."
+    },
+    {
+      question: "What makes your hookah service special?",
+      answer: "We offer premium quality hookah with a variety of flavors in a comfortable and social environment. Our staff ensures a perfect hookah experience every time."
+    },
+    {
+      question: "How does the barbershop service work?",
+      answer: "Our professional barbershop is located right next to the restaurant. You can enjoy a meal and get a fresh haircut all in one visit. Walk-ins welcome or book ahead."
+    },
+    {
+      question: "What types of perfumes do you sell?",
+      answer: "We carry a curated selection of exotic and unique fragrances from various brands. Our staff can help you find the perfect scent for any occasion."
+    },
+    {
+      question: "Can I pre-order food for pickup?",
+      answer: "Yes! You can call us at +27 73 159 8909 to pre-order your favorite dishes. We'll have them ready for pickup at your specified time."
+    },
+    {
+      question: "What entertainment do you offer?",
+      answer: "We regularly host live music performances, DJ nights, cultural events, and special celebrations. Follow our social media for upcoming events and entertainment schedule."
+    },
+    {
+      question: "Do you offer catering services?",
+      answer: "We're exploring catering options for the future. Currently, we focus on our restaurant experience and private event hosting at our venue."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white pt-24 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-kamalo-red">Services</span>
           </h1>
@@ -76,15 +168,18 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => {
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
               <Card 
                 key={service.id} 
-                className={`bg-black/50 border-gray-800 hover:border-kamalo-red transition-all duration-300 ${
+                className={`bg-black/50 border-gray-800 hover:border-kamalo-red transition-all duration-700 ${
                   service.featured ? 'lg:col-span-2' : ''
-                } ${service.comingSoon ? 'opacity-80' : ''}`}
+                } ${service.comingSoon ? 'opacity-80' : ''} ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
@@ -116,7 +211,33 @@ const Services = () => {
           })}
         </div>
 
-        <div className="mt-16 text-center">
+        {/* FAQ Section */}
+        <div ref={faqRef} className={`mb-16 transition-all duration-1000 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem 
+                value="faqs" 
+                className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+              >
+                <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                  Frequently Asked Questions
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6">
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                        <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                        <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+
+        <div className={`text-center transition-all duration-1000 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-black/50 rounded-lg p-8 border border-gray-800">
             <h2 className="text-2xl font-bold text-white mb-4">
               Ready to Experience <span className="text-kamalo-red">Kamalo City</span>?
