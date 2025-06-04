@@ -1,41 +1,65 @@
-
 import { Users, Calendar, Star, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const PrivateBookings = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "How do I book Kamalo City for a private event?",
-      answer: "Just contact us via our website or WhatsApp to check availability and rates."
+      answer: "Call 073 691 1461 and we'll guide you."
     },
     {
       question: "How many guests can the venue handle?",
-      answer: "Our space comfortably hosts 80–100 people seated or up to 120 standing."
+      answer: "Up to 80 seated guests."
     },
     {
       question: "What kind of events do you host?",
-      answer: "Birthdays, work functions, album launches, bridal showers, and more."
+      answer: "Birthdays, New Year's parties, and more."
     },
     {
       question: "Is music and sound included in the booking?",
-      answer: "Yes, we offer DJ booth access and house sound systems."
+      answer: "Yes, DJ booth and sound system included."
     },
     {
       question: "Can I bring outside food or décor?",
-      answer: "We provide full catering and can work with your décor team."
+      answer: "Yes, with some T&Cs."
     },
     {
       question: "Do you allow photographers or videographers?",
-      answer: "Yes, professional media teams are welcome."
+      answer: "Of course — our space loves the camera."
     },
     {
       question: "Are kids allowed during private functions?",
-      answer: "Yes — you can tailor the experience to include families."
+      answer: "Yes, it's family-friendly."
     },
     {
       question: "How far in advance should I book?",
-      answer: "We recommend at least 2–3 weeks notice for weekend events."
+      answer: "At least a week in advance."
     }
   ];
 
@@ -46,17 +70,17 @@ const PrivateBookings = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-kamalo-red">Private</span> Venue Hire
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Searching for a private event venue in Cape Town? Kamalo City offers full restaurant hire for birthdays, business events, album launches, or private parties.
+              Searching for a private event venue in Cape Town? Kamalo City offers full restaurant hire for birthdays, business events, New Year's parties, or private celebrations.
             </p>
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=400&h=300&fit=crop"
@@ -95,7 +119,7 @@ const PrivateBookings = () => {
           </div>
 
           {/* Event Types */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">Perfect For</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -118,15 +142,28 @@ const PrivateBookings = () => {
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-black/50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-kamalo-red mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
@@ -140,14 +177,14 @@ const PrivateBookings = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+27731598909"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                href="tel:+27736911461"
+                className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
-                Call Events Team: +27 73 159 8909
+                Call Events Team: +27 73 691 1461
               </a>
               <a
                 href="/contact"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 Send Inquiry
               </a>

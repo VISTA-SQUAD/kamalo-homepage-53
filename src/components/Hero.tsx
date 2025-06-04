@@ -52,9 +52,6 @@ const Hero = () => {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-full">
-              See Our Instagram
-            </Button>
             <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full">
               <Link to="/reservations">Make Reservation</Link>
             </Button>

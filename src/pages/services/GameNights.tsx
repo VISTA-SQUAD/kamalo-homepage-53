@@ -1,41 +1,65 @@
-
 import { Trophy, Users, Calendar, Gamepad2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const GameNights = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "When will game nights start?",
-      answer: "We're currently organizing our game night program and expect to launch soon. Follow us on Instagram for announcements!"
+      answer: "Pool is already available — tournaments soon."
     },
     {
       question: "What types of games will be featured?",
-      answer: "We're planning classics like chess, dominoes, Uno, cards, and more based on community interest."
+      answer: "Chess, dominoes, Uno, cards, pool."
     },
     {
       question: "Do I need to bring my own games?",
-      answer: "We'll provide all games and equipment, but you're welcome to bring favorites to share."
+      answer: "No — we've got you covered."
     },
     {
       question: "Will there be prizes for winners?",
-      answer: "Yes! We're planning exciting prizes for tournament winners including vouchers, recognition, and special rewards."
+      answer: "Yes — vouchers and other rewards."
     },
     {
       question: "Is it beginner-friendly?",
-      answer: "Absolutely! All skill levels are welcome, from complete beginners to experienced players."
+      answer: "100% — all are welcome."
     },
     {
       question: "Can I suggest games to include?",
-      answer: "Yes! We want community input to shape our game selection and tournament formats."
+      answer: "Yes — we love feedback."
     },
     {
       question: "Will food and drinks be available?",
-      answer: "Yes — full menu and drinks available throughout all game nights and tournaments."
+      answer: "Yes — our full menu is open during game nights."
     },
     {
       question: "How do I stay updated on game night announcements?",
-      answer: "Follow us on Instagram @kamalo_city or call us for the latest updates on launch dates."
+      answer: "Follow @kamalo_city on socials or join our WhatsApp Group."
     }
   ];
 
@@ -46,20 +70,17 @@ const GameNights = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-kamalo-red">Game Nights</span> & Social Tournaments
             </h1>
-            <div className="bg-kamalo-red text-white px-6 py-2 rounded-full text-lg font-semibold inline-block mb-6">
-              Coming Soon!
-            </div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Looking for a fun night out that's more than just dinner and drinks? Kamalo City is preparing to host social game nights and casual tournaments — featuring classics like chess, dominoes, Uno, cards, and more.
+              Looking for a fun night out that's more than just dinner and drinks? Kamalo City hosts social game nights and casual tournaments — featuring chess, dominoes, Uno, cards, and pool.
             </p>
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
@@ -98,7 +119,7 @@ const GameNights = () => {
           </div>
 
           {/* Planned Features */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">What's Coming</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -125,7 +146,7 @@ const GameNights = () => {
           </div>
 
           {/* Gaming Categories */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">Planned Game Categories</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-black/50 rounded-lg p-6">
@@ -156,44 +177,57 @@ const GameNights = () => {
           </div>
 
           {/* Pre-Launch Interest */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Pre-Launch Interest</h2>
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <h2 className="text-3xl font-bold text-center mb-12">Stay Connected</h2>
             <div className="bg-black/50 rounded-lg p-8 text-center max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold text-kamalo-red mb-4">Be the First to Know!</h3>
+              <h3 className="text-2xl font-bold text-kamalo-red mb-4">Join Our Community!</h3>
               <p className="text-gray-300 mb-6">
-                Want to be notified when we launch our game nights? Give us a call or follow us on Instagram to stay updated on our gaming program development.
+                Pool is already available, and tournaments are coming soon. Join our WhatsApp group to stay updated on gaming events and connect with fellow players.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-kamalo-dark border border-kamalo-red rounded-lg p-4">
-                  <h4 className="font-bold text-kamalo-red mb-2">Early Access Benefits</h4>
-                  <ul className="text-gray-300 text-sm space-y-1">
-                    <li>• Priority tournament registration</li>
-                    <li>• Exclusive practice nights</li>
-                    <li>• Input on game selection</li>
-                  </ul>
-                </div>
-                <div className="bg-kamalo-dark border border-kamalo-red rounded-lg p-4">
-                  <h4 className="font-bold text-kamalo-red mb-2">Community Building</h4>
-                  <ul className="text-gray-300 text-sm space-y-1">
-                    <li>• Help shape tournament rules</li>
-                    <li>• Suggest favorite games</li>
-                    <li>• Connect with fellow gamers</li>
-                  </ul>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors font-semibold"
+                >
+                  Join WhatsApp Group
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                >
+                  Follow @kamalo_city
+                </a>
               </div>
             </div>
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-black/50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-kamalo-red mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`mb-16 transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
@@ -203,20 +237,20 @@ const GameNights = () => {
               Ready to <span className="text-kamalo-red">Join the Games</span>?
             </h2>
             <p className="text-gray-300 mb-6">
-              Stay connected with Kamalo City for the latest updates on our game night launch!
+              Stay connected with Kamalo City for the latest updates on our game nights and tournaments!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://instagram.com"
+                href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors font-semibold"
               >
-                Follow @kamalo_city
+                Join WhatsApp Group
               </a>
               <a
                 href="tel:+27731598909"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 Call for Updates: +27 73 159 8909
               </a>

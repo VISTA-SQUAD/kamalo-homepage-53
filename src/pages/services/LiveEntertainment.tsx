@@ -1,41 +1,65 @@
-
 import { Music, Calendar, Users, Mic } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const LiveEntertainment = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "When do you host live music events?",
-      answer: "We host DJs and performances every weekend and on special event nights."
+      answer: "Every Friday, sometimes Saturdays."
     },
     {
       question: "Is there a cover charge?",
-      answer: "Most nights are free; special guests may have a small entry fee."
+      answer: "Usually low or free — varies."
     },
     {
       question: "What kind of music do you play?",
-      answer: "Amapiano, Afrobeat, house, R&B, and urban African sounds."
+      answer: "Congolese, Afro, and old-school classics."
     },
     {
       question: "Can I reserve a table during events?",
-      answer: "Yes — VIP and general table reservations are available."
+      answer: "Yes, both VIP and general seating."
     },
     {
       question: "Do you allow local performers to apply?",
-      answer: "Yes, DM us or email bookings@kamalocity.com."
+      answer: "Yes — we support local talent."
     },
     {
       question: "Is it safe and secure to party at Kamalo City?",
-      answer: "Absolutely — we have onsite security and controlled entry."
+      answer: "Yes — controlled entry and security in place."
     },
     {
       question: "Can we dance and party, or is it just seated?",
-      answer: "Both! There's room to dance, vibe, or chill."
+      answer: "You can absolutely dance."
     },
     {
       question: "Do you serve food during live shows?",
-      answer: "Yes — full menu and drinks available throughout."
+      answer: "Yes — full menu available."
     }
   ];
 
@@ -46,17 +70,17 @@ const LiveEntertainment = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Amapiano, Afrobeat</span> & Local Performances
+              <span className="text-kamalo-red">Congolese, Afro</span> & Local Performances
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience Cape Town nightlife at its best with Kamalo City's live entertainment nights. From Afrobeat and Amapiano DJs to rising local artists, our stage hosts high-energy performances every weekend.
+              Experience Cape Town nightlife at its best with Kamalo City's live entertainment nights. From Congolese and Afro music to old-school classics, our stage hosts high-energy performances every weekend.
             </p>
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop"
@@ -95,7 +119,7 @@ const LiveEntertainment = () => {
           </div>
 
           {/* Entertainment Types */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">What to Expect</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -122,7 +146,7 @@ const LiveEntertainment = () => {
           </div>
 
           {/* Weekly Schedule Preview */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">Weekly Entertainment</h2>
             <div className="bg-black/50 rounded-lg p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -143,15 +167,28 @@ const LiveEntertainment = () => {
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-black/50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-kamalo-red mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
@@ -168,13 +205,13 @@ const LiveEntertainment = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
                 Follow @kamalo_city
               </a>
               <a
                 href="tel:+27731598909"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 Call for Events: +27 73 159 8909
               </a>

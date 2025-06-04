@@ -2,40 +2,65 @@
 import { Wind, Clock, Users, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const HookahLounge = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "Where can I smoke hookah in Cape Town?",
-      answer: "Kamalo City in Goodwood offers premium shisha with a full food and music experience."
+      answer: "Right here at Kamalo City in Goodwood — we offer a cozy, vibey hookah lounge inside our venue."
     },
     {
       question: "What flavors of hookah do you have?",
-      answer: "We offer mint, double apple, blueberry, mango, and seasonal blends."
+      answer: "Mint, double apple, fruity blends — just ask what's fresh."
     },
     {
       question: "Is the hookah lounge open every night?",
-      answer: "Yes, our hookah lounge operates during all restaurant hours, 7 days a week."
+      answer: "Yes — we're open daily."
     },
     {
       question: "Do you need ID to enter the hookah section?",
-      answer: "Yes, it's 18+ only in the smoking area."
+      answer: "No ID is needed, but 18+ only."
     },
     {
       question: "Can I book a table in the lounge?",
-      answer: "Absolutely — we recommend reservations on weekends."
+      answer: "Absolutely. Booking is smart, especially on busy nights."
     },
     {
       question: "Do you serve alcohol or mocktails with hookah?",
-      answer: "Yes, we have mocktails and bar-style drinks to pair with your session."
+      answer: "We serve alcohol, but no mocktails yet."
     },
     {
       question: "Is there music or entertainment while smoking?",
-      answer: "Yes, DJs or playlists run most evenings for a lively vibe."
+      answer: "Yes — either DJs or smooth playlists."
     },
     {
       question: "Is there a smoking area outside too?",
-      answer: "Our hookah experience is indoor with proper ventilation, but outdoor seating is available."
+      answer: "Yes — there's a chill outdoor section."
     }
   ];
 
@@ -46,7 +71,7 @@ const HookahLounge = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Cape Town <span className="text-kamalo-red">Shisha Experience</span>
             </h1>
@@ -56,7 +81,7 @@ const HookahLounge = () => {
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="/lovable-uploads/e8bac841-0a55-4ef6-be6d-f24cbc468ab1.png"
@@ -95,7 +120,7 @@ const HookahLounge = () => {
           </div>
 
           {/* Features */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -117,15 +142,28 @@ const HookahLounge = () => {
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-black/50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-kamalo-red mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
@@ -140,13 +178,13 @@ const HookahLounge = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+27731598909"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
                 Call Us: +27 73 159 8909
               </a>
               <a
                 href="/reservations"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 Make Reservation
               </a>

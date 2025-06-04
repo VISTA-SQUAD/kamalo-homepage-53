@@ -1,42 +1,75 @@
-
 import { Clock, Phone, CheckCircle, Truck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const PreOrderFood = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "How do I pre-order food from Kamalo City?",
-      answer: "Via WhatsApp, website form, or call us directly."
+      answer: "Order via Uber Eats or WhatsApp."
     },
     {
       question: "Can I pre-order for a group or office lunch?",
-      answer: "Yes — we handle bulk pre-orders with advance notice."
+      answer: "Yes, we handle large orders easily."
     },
     {
       question: "What dishes are available for pre-order?",
-      answer: "Our full menu is open to pre-orders including platters, wings, and grills."
+      answer: "Our full menu — wings, platters, grills, etc."
     },
     {
       question: "Can I customize my order?",
-      answer: "Yes — just add notes when placing your order."
+      answer: "Not currently, but everything's crafted to be delicious."
     },
     {
       question: "How do I pay for a pre-order?",
-      answer: "Currently in-store upon pickup; online payments coming soon."
+      answer: "Cash at pickup or online."
     },
     {
       question: "When is food ready after I order?",
-      answer: "Average prep time is 15–25 mins depending on order size."
+      answer: "Within 20 minutes."
     },
     {
       question: "Is delivery available yet?",
-      answer: "Not yet — but launching very soon."
+      answer: "Not yet, but coming soon."
     },
     {
       question: "Can I pre-order for a specific pickup time?",
-      answer: "Yes — let us know your desired pickup time."
+      answer: "Yes — just let us know."
     }
+  ];
+
+  const popularItems = [
+    "Fumbwa with Dry Fish",
+    "Grilled Thomson (Fish)",
+    "Grilled Pork (380g)",
+    "Fried Makayabu",
+    "Fried Thomson",
+    "Beef Stew (355g)"
   ];
 
   return (
@@ -46,7 +79,7 @@ const PreOrderFood = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-kamalo-red">Pre-Order</span> Fast Pickup & Soon: Delivery
             </h1>
@@ -56,7 +89,7 @@ const PreOrderFood = () => {
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
@@ -95,7 +128,7 @@ const PreOrderFood = () => {
           </div>
 
           {/* How It Works */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">How Pre-Ordering Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -122,46 +155,44 @@ const PreOrderFood = () => {
           </div>
 
           {/* Popular Pre-Order Items */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">Popular Pre-Order Items</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Signature Platters</h3>
-                <p className="text-gray-300">Mixed grills and combination platters for sharing</p>
-              </div>
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Wing Specials</h3>
-                <p className="text-gray-300">Famous wings with various African-inspired sauces</p>
-              </div>
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Grilled Selections</h3>
-                <p className="text-gray-300">Fresh grilled meats with traditional sides</p>
-              </div>
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Office Lunch Combos</h3>
-                <p className="text-gray-300">Bulk orders perfect for workplace catering</p>
-              </div>
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Traditional Mains</h3>
-                <p className="text-gray-300">Authentic African dishes with rice and sides</p>
-              </div>
-              <div className="bg-black/50 rounded-lg p-6">
-                <h3 className="text-lg font-bold text-kamalo-red mb-2">Family Meals</h3>
-                <p className="text-gray-300">Large portions designed for family sharing</p>
-              </div>
+            <div className="bg-black/50 rounded-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold text-kamalo-red mb-6 text-center">Customer Favorites</h3>
+              <ul className="space-y-3">
+                {popularItems.map((item, index) => (
+                  <li key={index} className="flex items-center text-gray-300">
+                    <CheckCircle className="w-5 h-5 text-kamalo-red mr-3 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-            <div className="space-y-6 max-w-4xl mx-auto">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-black/50 rounded-lg p-6">
-                  <h3 className="text-xl font-bold text-kamalo-red mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
-                </div>
-              ))}
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
@@ -176,13 +207,13 @@ const PreOrderFood = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:+27731598909"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
                 Call to Order: +27 73 159 8909
               </a>
               <a
                 href="/menu"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 View Full Menu
               </a>
