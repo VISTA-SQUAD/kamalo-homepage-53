@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Music, Scissors, Wind, Users, Calendar, Utensils } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LiveEventsServices = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,34 +24,40 @@ const LiveEventsServices = () => {
 
   const services = [
     {
-      icon: Music,
-      title: "Live Entertainment",
-      description: "Concerts, DJ performances, and cultural nights"
-    },
-    {
+      id: "hookah",
       icon: Wind,
-      title: "Premium Hookah",
-      description: "Relax with our selection of quality shisha"
+      title: "Hookah Lounge Vibes — Daily from 6 PM",
+      description: "Chill with friends in our ambient indoor lounge or spark up in the outdoor patio. R150 per session with mint, apple, and fruity blends always on deck. No ID needed — just 18+ and ready to vibe.",
+      highlights: "🎶 Live DJs. 🪩 Low lights. 🍹 Drinks flowing.",
+      link: "/services/hookah-lounge"
     },
     {
+      id: "barber",
       icon: Scissors,
-      title: "Barbershop",
-      description: "Professional grooming services next door"
+      title: "Get Faded, Stay Fresh – In-House Barbershop",
+      description: "Fade, lineup, full cut — all just R60. No bookings needed. Walk in, walk out sharp. And yes, food and drink right after your trim? Always.",
+      link: "/services/barber-next-door"
     },
     {
-      icon: Wind,
-      title: "Exotic Perfumes",
-      description: "Unique fragrances available for purchase"
-    },
-    {
-      icon: Users,
-      title: "Private Events",
-      description: "Book the venue for your special occasions"
-    },
-    {
+      id: "games",
       icon: Calendar,
-      title: "Game Tournaments",
-      description: "Exciting competitions coming soon"
+      title: "Game Nights Are Coming Soon",
+      description: "Think pool, Uno, chess, dominoes — with prizes, drinks, and late-night eats. Kamalo's casual game nights will bring community energy back to Goodwood. Stay tuned.",
+      link: "/services/game-nights"
+    },
+    {
+      id: "private-events",
+      icon: Users,
+      title: "Host Your Next Private Event at Kamalo",
+      description: "Birthdays, pop-ups, or just an all-out party — Kamalo is available for full venue hire. Seats up to 80 guests, sound system included, and outside décor welcome. Let's make your next event unforgettable.",
+      link: "/services/private-bookings"
+    },
+    {
+      id: "live-music",
+      icon: Music,
+      title: "Live Music & Dancefloor Fridays",
+      description: "Every weekend, the beats drop and the vibe lifts. From old-school Congolese to Afro throwbacks, we're where Goodwood comes to move. Reserve your VIP table early — they go fast.",
+      link: "/services/live-entertainment"
     }
   ];
 
@@ -70,17 +77,21 @@ const LiveEventsServices = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div
+              <Link
                 key={index}
-                className={`bg-black/50 rounded-lg p-6 border border-gray-800 hover:border-kamalo-red transition-all duration-500 ${
+                to={service.link}
+                className={`bg-black/50 rounded-lg p-6 border border-gray-800 hover:border-kamalo-red transition-all duration-500 block ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <IconComponent className="w-12 h-12 text-kamalo-red mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-300">{service.description}</p>
-              </div>
+                <p className="text-gray-300 mb-3">{service.description}</p>
+                {service.highlights && (
+                  <p className="text-kamalo-red text-sm">{service.highlights}</p>
+                )}
+              </Link>
             );
           })}
         </div>
