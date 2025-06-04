@@ -54,7 +54,7 @@ const BookingCTA = () => {
               <Button asChild className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg rounded-full">
                 <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp Us
+                  Join our Whatsapp group
                 </a>
               </Button>
               
