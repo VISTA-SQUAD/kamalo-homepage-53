@@ -48,10 +48,10 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
             <div className="space-y-3">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/kamalo_city"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"

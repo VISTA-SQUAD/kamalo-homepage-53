@@ -1,10 +1,46 @@
 
 import { Phone, MessageSquare, MapPin, Clock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitSuccess(false);
+    setSubmitError("");
+
+    try {
+      // Here you would usually send the data to a server
+      // For now, we'll just simulate success after a delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      console.log("Form submitted:", formData);
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
@@ -22,33 +58,68 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <div className="bg-black/50 rounded-lg p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label className="text-white block mb-2">Name</label>
+                <label htmlFor="name" className="text-white block mb-2">Name</label>
                 <input
+                  id="name"
+                  name="name"
                   type="text"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full p-3 bg-gray-800 rounded-lg text-white"
                   placeholder="Your name"
+                  required
                 />
               </div>
               <div>
-                <label className="text-white block mb-2">Email</label>
+                <label htmlFor="email" className="text-white block mb-2">Email</label>
                 <input
+                  id="email"
+                  name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full p-3 bg-gray-800 rounded-lg text-white"
                   placeholder="Your email"
+                  required
                 />
               </div>
               <div>
-                <label className="text-white block mb-2">Message</label>
+                <label htmlFor="message" className="text-white block mb-2">Message</label>
                 <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className="w-full p-3 bg-gray-800 rounded-lg text-white h-32"
                   placeholder="Your message"
+                  required
                 ></textarea>
               </div>
-              <Button className="w-full bg-kamalo-red hover:bg-red-600 text-white">
-                Send Message
+              <Button 
+                type="submit" 
+                className="w-full bg-kamalo-red hover:bg-red-600 text-white"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
+              
+              {submitSuccess && (
+                <div className="p-3 bg-green-800/50 border border-green-700 rounded-md text-green-200">
+                  Thank you! Your message has been sent. We'll get back to you soon.
+                </div>
+              )}
+              
+              {submitError && (
+                <div className="p-3 bg-red-800/50 border border-red-700 rounded-md text-red-200">
+                  {submitError}
+                </div>
+              )}
+              
+              <p className="text-sm text-gray-400 mt-4">
+                Your message will be sent to: ntumbapitchou@yahoo.com
+              </p>
             </form>
           </div>
 
@@ -77,7 +148,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Mail className="w-6 h-6 mr-4 text-kamalo-red" />
-                  <span>info@kamalocity.co.za</span>
+                  <span>ntumbapitchou@yahoo.com</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Clock className="w-6 h-6 mr-4 text-kamalo-red" />

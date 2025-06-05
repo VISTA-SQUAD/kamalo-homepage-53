@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -54,13 +55,6 @@ const BookingCTA = () => {
                 </a>
               </Button>
               
-              <Button asChild className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-6 text-lg rounded-full">
-                <a href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <Utensils className="w-5 h-5" />
-                  Pre-Order on Uber Eats
-                </a>
-              </Button>
-              
               <div className="flex items-center gap-2 text-white">
                 <span className="text-gray-400">or call:</span>
                 <a href="tel:+27731598909" className="flex items-center gap-2 text-kamalo-red hover:text-red-400 transition-colors">
@@ -69,6 +63,17 @@ const BookingCTA = () => {
                 </a>
               </div>
             </div>
+            
+            <p className="mt-8 text-lg text-gray-300">
+              <a 
+                href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline text-kamalo-red hover:text-red-400 transition-colors"
+              >
+                Hungry already? Pre-order your meal online and skip the wait.
+              </a>
+            </p>
           </div>
         </div>
       </div>

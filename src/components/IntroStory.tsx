@@ -28,7 +28,7 @@ const IntroStory = () => {
             Welcome to the Heart of <span className="text-kamalo-red">African Culture</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Kamalo City brings authentic African cuisine and vibrant culture to Cape Town. Experience traditional Congolese flavors, live entertainment, and premium services in the heart of Goodwood.
+            Experience authentic Congolese cuisine and vibrant African culture at Kamalo City. Located in Cape Town's Goodwood area, our restaurant offers traditional flavors, entertainment, and a warm community atmosphere.
           </p>
         </div>
       </div>
