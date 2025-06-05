@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Utensils, Music, Users, Scissors, Wind, Award, Clock } from "lucide-react";
 import {
@@ -217,6 +216,14 @@ const Services = () => {
                   className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
                 >
                   Call Us: +27 73 159 8909
+                </a>
+                <a
+                  href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
+                >
+                  Order on Uber Eats
                 </a>
                 <a
                   href="/reservations"
