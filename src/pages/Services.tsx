@@ -1,13 +1,14 @@
 
-import { useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Utensils, Music, Users, Scissors, Wind, Award, Clock, Calendar } from "lucide-react";
+import { Utensils, Music, Users, Scissors, Wind, Award, Clock } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Services = () => {
   const services = [
@@ -63,7 +64,7 @@ const Services = () => {
     },
     {
       id: 8,
-      title: "Tournaments – Coming Soon",
+      title: "Game Nights – Coming Soon",
       description: "Get ready for exciting gaming tournaments and event-style competitions. Stay tuned for more details on upcoming tournaments.",
       icon: Award,
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop",
@@ -123,108 +124,112 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-kamalo-dark text-white pt-24 px-6">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="text-kamalo-red">Services</span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Discover everything Kamalo City has to offer. From authentic African cuisine to entertainment, grooming, and unique shopping experiences.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {services.map((service) => {
-            const IconComponent = service.icon;
-            return (
-              <Card 
-                key={service.id} 
-                className={`bg-black/50 border-gray-800 hover:border-kamalo-red transition-all duration-700 ${
-                  service.featured ? 'lg:col-span-2' : ''
-                } ${service.comingSoon ? 'opacity-80' : ''}`}
-              >
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                  {service.comingSoon && (
-                    <div className="absolute top-4 right-4 bg-kamalo-red text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Coming Soon
-                    </div>
-                  )}
-                </div>
-                <CardHeader className="pb-4">
-                  <div className="flex items-center space-x-3 mb-2">
-                    <IconComponent className="w-6 h-6 text-kamalo-red" />
-                    <CardTitle className="text-white text-xl">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-gray-300 leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mb-16">
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem 
-                value="faqs" 
-                className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
-              >
-                <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
-                  Frequently Asked Questions
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <div className="space-y-4">
-                    {faqs.map((faq, index) => (
-                      <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
-                        <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
-                        <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <div className="bg-black/50 rounded-lg p-8 border border-gray-800">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Ready to Experience <span className="text-kamalo-red">Kamalo City</span>?
-            </h2>
-            <p className="text-gray-300 mb-6">
-              Visit us at 90 Voortrekker Road, Goodwood, Cape Town. Open 7 days a week from 11:00 AM to 11:00 PM.
+    <div className="min-h-screen bg-kamalo-dark text-white">
+      <Navbar />
+      <div className="pt-24 px-6">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Our <span className="text-kamalo-red">Services</span>
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover everything Kamalo City has to offer. From authentic African cuisine to entertainment, grooming, and unique shopping experiences.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+27731598909"
-                className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
-              >
-                Call Us: +27 73 159 8909
-              </a>
-              <a
-                href="/reservations"
-                className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
-              >
-                Make Reservation
-              </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            {services.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <Card 
+                  key={service.id} 
+                  className={`bg-black/50 border-gray-800 hover:border-kamalo-red transition-all duration-300 ${
+                    service.featured ? 'lg:col-span-2' : ''
+                  } ${service.comingSoon ? 'opacity-80' : ''}`}
+                >
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                    {service.comingSoon && (
+                      <div className="absolute top-4 right-4 bg-kamalo-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Coming Soon
+                      </div>
+                    )}
+                  </div>
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <IconComponent className="w-6 h-6 text-kamalo-red" />
+                      <CardTitle className="text-white text-xl">
+                        {service.title}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-300 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    Frequently Asked Questions
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <div className="bg-black/50 rounded-lg p-8 border border-gray-800">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Ready to Experience <span className="text-kamalo-red">Kamalo City</span>?
+              </h2>
+              <p className="text-gray-300 mb-6">
+                Visit us at 90 Voortrekker Road, Goodwood, Cape Town. Open 7 days a week from 11:00 AM to 11:00 PM.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="tel:+27731598909"
+                  className="bg-kamalo-red text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold"
+                >
+                  Call Us: +27 73 159 8909
+                </a>
+                <a
+                  href="/reservations"
+                  className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-lg hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
+                >
+                  Make Reservation
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

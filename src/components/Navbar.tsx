@@ -1,5 +1,5 @@
 
-import { Instagram, ChevronDown, Menu, X } from "lucide-react";
+import { Instagram, ChevronDown, Menu, X, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -28,7 +28,7 @@ const Navbar = () => {
   const [galleryOpen, setGalleryOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-sm">
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">
         <Link to="/" className="text-white hover:text-kamalo-red transition-colors">
@@ -109,7 +109,10 @@ const Navbar = () => {
         <Link to="/contact" className="text-white hover:text-kamalo-red transition-colors">
           Contact Us
         </Link>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-kamalo-red transition-colors">
+        <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="text-white hover:text-kamalo-red transition-colors">
+          <MessageCircle className="w-6 h-6" />
+        </a>
+        <a href="https://instagram.com/kamalo_city" target="_blank" rel="noopener noreferrer" className="text-white hover:text-kamalo-red transition-colors">
           <Instagram className="w-6 h-6" />
         </a>
       </div>
@@ -194,7 +197,10 @@ const Navbar = () => {
                 <Link to="/contact" className="block text-white hover:text-kamalo-red transition-colors py-2" onClick={() => setIsOpen(false)}>
                   Contact Us
                 </Link>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-kamalo-red transition-colors py-2" onClick={() => setIsOpen(false)}>
+                <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-kamalo-red transition-colors py-2" onClick={() => setIsOpen(false)}>
+                  WhatsApp Group
+                </a>
+                <a href="https://instagram.com/kamalo_city" target="_blank" rel="noopener noreferrer" className="block text-white hover:text-kamalo-red transition-colors py-2" onClick={() => setIsOpen(false)}>
                   Instagram
                 </a>
               </div>

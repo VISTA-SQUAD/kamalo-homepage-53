@@ -36,11 +36,8 @@ const BookingCTA = () => {
             </p>
             
             <h3 className="text-2xl font-bold text-white mb-6">Let's Talk</h3>
-            <p className="text-lg text-gray-300 mb-8">
-              Got a question? Want to book? Need directions? Tap the WhatsApp button below or hit us up on Instagram 
-              <a href="https://instagram.com/kamalo_city" target="_blank" rel="noopener noreferrer" className="text-kamalo-red hover:text-red-400 ml-1">
-                @kamalo_city
-              </a>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              Ready to experience Kamalo City? Join our WhatsApp group for the latest updates on events, specials, and exclusive announcements. Or reach out directly — we're here to help with bookings, questions, and everything in between.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -54,7 +51,7 @@ const BookingCTA = () => {
               <Button asChild className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg rounded-full">
                 <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
-                  Join our Whatsapp group
+                  Join our WhatsApp group
                 </a>
               </Button>
               

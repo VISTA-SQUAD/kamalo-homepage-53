@@ -1,18 +1,21 @@
+
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 import ImageModal from "@/components/ImageModal";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface GalleryImage {
   id: number;
-  category: "restaurant" | "barbershop" | "perfumes";
+  category: "restaurant" | "barbershop" | "perfumes" | "food-drinks" | "events";
   url: string;
   alt: string;
 }
 
 const Gallery = () => {
   const [images] = useState<GalleryImage[]>([
-    // Restaurant images (including both old and new images)
+    // Restaurant images
     {
       id: 1,
       category: "restaurant",
@@ -93,6 +96,32 @@ const Gallery = () => {
       url: "/lovable-uploads/ad681f73-a6fa-48ca-90ac-12c051f1ba0a.png",
       alt: "Shisha Display",
     },
+    // Food & Drinks placeholders (you can add actual images later)
+    {
+      id: 14,
+      category: "food-drinks",
+      url: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=300&fit=crop",
+      alt: "Grilled Pork Dish",
+    },
+    {
+      id: 15,
+      category: "food-drinks",
+      url: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop",
+      alt: "African Cuisine Spread",
+    },
+    // Events placeholders
+    {
+      id: 16,
+      category: "events",
+      url: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=400&h=300&fit=crop",
+      alt: "Live Music Event",
+    },
+    {
+      id: 17,
+      category: "events",
+      url: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=400&h=300&fit=crop",
+      alt: "Private Event Setup",
+    },
   ]);
 
   const getImagesByCategory = (category: string) => {
@@ -100,60 +129,96 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-kamalo-dark text-white pt-24 px-6">
-      <h1 className="text-4xl font-bold mb-12 text-center">
-        Our <span className="text-kamalo-red">Gallery</span>
-      </h1>
+    <div className="min-h-screen bg-kamalo-dark text-white">
+      <Navbar />
+      <div className="pt-24 px-6">
+        <div className="container mx-auto">
+          <h1 className="text-4xl font-bold mb-12 text-center">
+            Our <span className="text-kamalo-red">Gallery</span>
+          </h1>
 
-      <Tabs defaultValue="restaurant" className="w-full">
-        <TabsList className="grid w-full grid-cols-1 lg:grid-cols-3">
-          <TabsTrigger value="restaurant">Restaurant</TabsTrigger>
-          <TabsTrigger value="barbershop">Barbershop</TabsTrigger>
-          <TabsTrigger value="perfumes">Perfumes & Shisha</TabsTrigger>
-        </TabsList>
+          <Tabs defaultValue="restaurant" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8">
+              <TabsTrigger value="restaurant">Restaurant</TabsTrigger>
+              <TabsTrigger value="food-drinks">Food & Drinks</TabsTrigger>
+              <TabsTrigger value="events">Events</TabsTrigger>
+              <TabsTrigger value="barbershop">Barbershop</TabsTrigger>
+              <TabsTrigger value="perfumes">Perfumes & Shisha</TabsTrigger>
+            </TabsList>
 
-        <TabsContent value="restaurant">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {getImagesByCategory("restaurant").map((image) => (
-              <Card key={image.id} className="overflow-hidden">
-                <ImageModal
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover"
-                />
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
+            <TabsContent value="restaurant">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {getImagesByCategory("restaurant").map((image) => (
+                  <Card key={image.id} className="overflow-hidden">
+                    <ImageModal
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
 
-        <TabsContent value="barbershop">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {getImagesByCategory("barbershop").map((image) => (
-              <Card key={image.id} className="overflow-hidden">
-                <ImageModal
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover"
-                />
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
+            <TabsContent value="food-drinks">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {getImagesByCategory("food-drinks").map((image) => (
+                  <Card key={image.id} className="overflow-hidden">
+                    <ImageModal
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
 
-        <TabsContent value="perfumes">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {getImagesByCategory("perfumes").map((image) => (
-              <Card key={image.id} className="overflow-hidden">
-                <ImageModal
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover"
-                />
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+            <TabsContent value="events">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {getImagesByCategory("events").map((image) => (
+                  <Card key={image.id} className="overflow-hidden">
+                    <ImageModal
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="barbershop">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {getImagesByCategory("barbershop").map((image) => (
+                  <Card key={image.id} className="overflow-hidden">
+                    <ImageModal
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+
+            <TabsContent value="perfumes">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                {getImagesByCategory("perfumes").map((image) => (
+                  <Card key={image.id} className="overflow-hidden">
+                    <ImageModal
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-64 object-cover"
+                    />
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };
