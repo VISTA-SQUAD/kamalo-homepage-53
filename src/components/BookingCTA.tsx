@@ -1,8 +1,7 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Calendar, Phone, MessageCircle } from "lucide-react";
+import { Calendar, Phone, MessageCircle, Utensils } from "lucide-react";
 
 const BookingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
