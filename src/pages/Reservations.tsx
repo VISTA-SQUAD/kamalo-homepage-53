@@ -46,7 +46,7 @@ const Reservations = () => {
 
   const handleWhatsAppConfirm = () => {
     const message = `Hello! I would like to make a reservation for ${guests} guests on ${selectedDate} at ${selectedTime} at Kamalo City.`;
-    const whatsappUrl = `https://wa.me/+27731598909?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+27736911461?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -159,8 +159,8 @@ const Reservations = () => {
           <div className="mt-6 text-center">
             <p className="text-gray-400 text-sm">
               For any booking clarifications or special requirements, please contact{" "}
-              <a href="tel:+27731598909" className="text-kamalo-gold hover:text-kamalo-red transition-colors">
-                +27 73 159 8909
+              <a href="tel:+27736911461" className="text-kamalo-gold hover:text-kamalo-red transition-colors">
+                +27 73 691 1461
               </a>{" "}
               to ensure your reservation meets all your needs and there are no complications.
             </p>

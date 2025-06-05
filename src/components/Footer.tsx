@@ -1,6 +1,5 @@
 
 import { Clock, Phone, MapPin, Instagram } from "lucide-react";
-import LocationMap from "./LocationMap";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -24,7 +23,10 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 text-kamalo-red" />
-                <p>+27 73 159 8909</p>
+                <div>
+                  <p>+27 73 159 8909</p>
+                  <p>+27 73 691 1461</p>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-kamalo-red" />
@@ -51,12 +53,11 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 hover:text-kamalo-red transition-colors mb-4"
+              className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
             >
               <Instagram className="w-5 h-5" />
               <span>Instagram</span>
             </a>
-            <LocationMap />
           </div>
         </div>
 

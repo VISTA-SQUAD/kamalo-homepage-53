@@ -60,9 +60,20 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 mr-4 text-kamalo-red" />
                   <span>90 Voortrekker Road, Goodwood, Cape Town</span>
                 </div>
-                <div className="flex items-center text-gray-300">
-                  <Phone className="w-6 h-6 mr-4 text-kamalo-red" />
-                  <span>+27 73 159 8909</span>
+                <div className="flex items-start text-gray-300">
+                  <Phone className="w-6 h-6 mr-4 text-kamalo-red mt-1" />
+                  <div className="space-y-1">
+                    <div>
+                      <a href="tel:+27731598909" className="hover:text-kamalo-red transition-colors">
+                        +27 73 159 8909
+                      </a>
+                    </div>
+                    <div>
+                      <a href="tel:+27736911461" className="hover:text-kamalo-red transition-colors">
+                        +27 73 691 1461
+                      </a>
+                    </div>
+                  </div>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Mail className="w-6 h-6 mr-4 text-kamalo-red" />
