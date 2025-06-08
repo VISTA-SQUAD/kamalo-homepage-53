@@ -1,27 +1,8 @@
 
-import { useEffect, useRef, useState } from "react";
 import { Music, Scissors, Wind, Users, Calendar, Utensils } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const LiveEventsServices = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const services = [
     {
       id: "hookah",
@@ -62,9 +43,9 @@ const LiveEventsServices = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-gradient-to-b from-black to-kamalo-dark">
+    <section className="py-20 px-6 bg-gradient-to-b from-black to-kamalo-dark">
       <div className="container mx-auto">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             More Than Just <span className="text-kamalo-red">Dining</span>
           </h2>
@@ -80,10 +61,7 @@ const LiveEventsServices = () => {
               <Link
                 key={index}
                 to={service.link}
-                className={`bg-black/50 rounded-lg p-6 border border-gray-800 hover:border-kamalo-red transition-all duration-500 block ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                className="bg-black/50 rounded-lg p-6 border border-gray-800 hover:border-kamalo-red transition-all duration-500 block"
               >
                 <IconComponent className="w-12 h-12 text-kamalo-red mb-4" />
                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>

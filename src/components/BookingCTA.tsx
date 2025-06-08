@@ -51,7 +51,13 @@ const BookingCTA = () => {
               <Button asChild className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg rounded-full">
                 <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
-                  Join our WhatsApp group
+                  WhatsApp Group
+                </a>
+              </Button>
+              
+              <Button asChild className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-6 text-lg rounded-full">
+                <a href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  Pre-Order on Uber Eats
                 </a>
               </Button>
               

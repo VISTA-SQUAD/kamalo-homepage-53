@@ -1,5 +1,5 @@
 
-import { Clock, Phone, MapPin, Instagram } from "lucide-react";
+import { Clock, Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
 import LocationMap from "./LocationMap";
 import { Link } from "react-router-dom";
 
@@ -47,16 +47,40 @@ const Footer = () => {
 
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 hover:text-kamalo-red transition-colors mb-4"
-            >
-              <Instagram className="w-5 h-5" />
-              <span>Instagram</span>
-            </a>
-            <LocationMap />
+            <div className="space-y-3">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>Instagram</span>
+              </a>
+              <a
+                href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" />
+                <span>WhatsApp Group</span>
+              </a>
+              <a
+                href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+                <span>Uber Eats</span>
+              </a>
+            </div>
+            <div className="mt-4">
+              <LocationMap />
+            </div>
           </div>
         </div>
 
