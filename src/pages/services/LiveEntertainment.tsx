@@ -1,73 +1,17 @@
 
-import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Music, CalendarDays } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const LiveEntertainment = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const faqs = [
-    {
-      question: "When do you have live entertainment?",
-      answer: "We host live music performances every Friday and Saturday evening starting at 8:00 PM. Our entertainment schedule includes live bands, DJ sets, and special cultural events throughout the week."
-    },
-    {
-      question: "Do I need to make a reservation for shows?",
-      answer: "We highly recommend making reservations for our entertainment nights, especially weekends. Tables fill up quickly during live performances. You can book by calling +27 73 159 8909."
-    },
-    {
-      question: "What type of music do you feature?",
-      answer: "Our entertainment focuses on authentic African music including Congolese rumba, Afrobeats, traditional sounds, and modern fusion. We also host special themed nights celebrating different African cultures."
-    },
-    {
-      question: "Is there a cover charge for entertainment?",
-      answer: "There's no additional cover charge for our regular entertainment. However, special events or guest artist performances may have a small entrance fee, which will be announced in advance."
-    },
-    {
-      question: "Can I request specific songs or artists?",
-      answer: "Absolutely! Our DJs and live performers love taking requests. Feel free to ask during the show, and they'll do their best to accommodate your musical preferences."
-    },
-    {
-      question: "Do you host private entertainment events?",
-      answer: "Yes! We can arrange private entertainment for your special occasions including birthdays, celebrations, and corporate events. Contact us to discuss your entertainment needs and pricing."
-    },
-    {
-      question: "Is the entertainment family-friendly?",
-      answer: "Our entertainment is generally family-friendly, especially during earlier evening hours. Later shows (after 10 PM) may be more suited for adult audiences. Please ask when making your reservation."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
       <div className="container mx-auto px-6 py-24">
-        <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Live Music & <span className="text-kamalo-red">Entertainment</span>
           </h1>
@@ -76,7 +20,7 @@ const LiveEntertainment = () => {
           </p>
         </div>
 
-        <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           <div className="bg-black/50 p-6 rounded-lg border border-gray-800 hover:border-kamalo-red/50 transition-colors hover:shadow-lg hover:shadow-kamalo-red/20">
             <div className="flex justify-center mb-6">
               <Music className="w-16 h-16 text-kamalo-red" />
@@ -140,7 +84,7 @@ const LiveEntertainment = () => {
           </div>
         </div>
 
-        <div ref={sectionRef} className={`bg-black/30 p-8 rounded-lg max-w-4xl mx-auto mb-16 border border-gray-800 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="bg-black/30 p-8 rounded-lg max-w-4xl mx-auto border border-gray-800">
           <h2 className="text-3xl font-bold mb-6 text-center">
             Upcoming <span className="text-kamalo-red">Performances</span>
           </h2>
@@ -194,54 +138,6 @@ const LiveEntertainment = () => {
           <div className="text-center mt-8">
             <Button asChild className="bg-kamalo-red hover:bg-red-600">
               <Link to="/reservations">Book a Table for a Show</Link>
-            </Button>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Entertainment <span className="text-kamalo-red">FAQs</span>
-            </h2>
-            <p className="text-xl text-gray-300">
-              Everything you need to know about our live entertainment
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`} 
-                  className="bg-black/50 rounded-lg border border-gray-800 px-6 data-[state=open]:border-kamalo-red transition-colors"
-                >
-                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-300 pb-6 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-6">
-            Experience the <span className="text-kamalo-red">Music</span>
-          </h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join us for an unforgettable evening of live African music, delicious food, and vibrant culture. Reserve your table today!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-kamalo-red hover:bg-red-600">
-              <Link to="/reservations">Make Reservation</Link>
-            </Button>
-            <Button asChild variant="outline" className="border-kamalo-red text-kamalo-red hover:bg-kamalo-red/10">
-              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
