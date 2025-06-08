@@ -2,6 +2,7 @@
 import { Utensils, Clock, Car, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import { Button } from "@/components/ui/button";
 
 const PreOrderFood = () => {
@@ -103,6 +104,7 @@ const PreOrderFood = () => {
         </div>
       </div>
 
+      <FAQ />
       <Footer />
     </div>
   );

@@ -2,6 +2,7 @@
 import { Scissors, Clock, User, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const BarberNextDoor = () => {
   return (
@@ -107,6 +108,7 @@ const BarberNextDoor = () => {
         </div>
       </div>
 
+      <FAQ />
       <Footer />
     </div>
   );
