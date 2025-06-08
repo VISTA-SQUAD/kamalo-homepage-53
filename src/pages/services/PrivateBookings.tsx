@@ -1,7 +1,7 @@
+
 import { Users, Calendar, Star, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,24 +10,6 @@ import {
 } from "@/components/ui/accordion";
 
 const PrivateBookings = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const faqs = [
     {
       question: "How do I book Kamalo City for a private event?",
@@ -70,7 +52,7 @@ const PrivateBookings = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-kamalo-red">Private</span> Venue Hire
             </h1>
@@ -80,7 +62,7 @@ const PrivateBookings = () => {
           </div>
 
           {/* Service Description */}
-          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
               <img
                 src="https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=400&h=300&fit=crop"
@@ -119,7 +101,7 @@ const PrivateBookings = () => {
           </div>
 
           {/* Event Types */}
-          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12">Perfect For</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
@@ -142,7 +124,7 @@ const PrivateBookings = () => {
           </div>
 
           {/* FAQs */}
-          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="mb-16">
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 <AccordionItem 

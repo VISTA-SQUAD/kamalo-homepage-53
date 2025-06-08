@@ -1,5 +1,5 @@
 
-import { Gamepad2, Users, Trophy, Clock, Calendar, Star } from "lucide-react";
+import { Gamepad2, Trophy, Users, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -10,108 +10,102 @@ const GameNights = () => {
       
       <div className="pt-24 px-6">
         <div className="container mx-auto">
-          {/* Coming Soon Banner */}
-          <div className="text-center mb-8">
-            <div className="inline-block bg-kamalo-red text-white px-6 py-3 rounded-full font-bold text-lg mb-4">
-              🎲 COMING SOON
-            </div>
-          </div>
-
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-kamalo-red">Game Nights</span> at Kamalo City
+              Game Nights <span className="text-kamalo-red">Coming Soon</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get ready for exciting gaming tournaments and casual game nights. Pool, Uno, chess, dominoes — with prizes, drinks, and late-night eats. Kamalo's game nights will bring community energy back to Goodwood.
+              Get ready for epic game nights at Kamalo City! Pool, Uno, chess, dominoes, and more with prizes, late-night eats, and the community energy that Goodwood has been waiting for.
             </p>
           </div>
 
-          {/* What's Coming */}
+          {/* Service Description */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop"
-                alt="Game Night Setup"
+                src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=300&fit=crop"
+                alt="Game Night"
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">What's Coming to Game Night</h2>
+              <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Bringing Community Together</h2>
+              <p className="text-gray-300 mb-4">
+                Our upcoming game nights will feature a variety of classic and modern games, creating the perfect environment for friendly competition and community connection. From strategic chess matches to exciting pool tournaments, there's something for everyone.
+              </p>
               <p className="text-gray-300 mb-6">
-                We're setting up the ultimate gaming experience with tournaments, casual play, and community competitions. Food, drinks, and good vibes included.
+                Enjoy late-night snacks, drinks, and the chance to win prizes while meeting new people and reconnecting with friends. Game nights at Kamalo City will be the social highlight of your week.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <Gamepad2 className="w-6 h-6 text-kamalo-red" />
-                  <span>Pool Tables</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Users className="w-6 h-6 text-kamalo-red" />
-                  <span>Card Games</span>
+                  <span>Multiple Games</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Trophy className="w-6 h-6 text-kamalo-red" />
-                  <span>Tournaments</span>
+                  <span>Prizes Available</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Star className="w-6 h-6 text-kamalo-red" />
-                  <span>Prizes</span>
+                  <Users className="w-6 h-6 text-kamalo-red" />
+                  <span>Community Event</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Calendar className="w-6 h-6 text-kamalo-red" />
+                  <span>Regular Nights</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Games We'll Feature */}
+          {/* Game Types */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12">Games We'll Feature</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <Gamepad2 className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Pool</h3>
-                <p className="text-gray-300">Professional tables with tournaments</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Pool</h3>
+                <p className="text-gray-300">Classic 8-ball and 9-ball tournaments</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Uno</h3>
-                <p className="text-gray-300">Classic card game competitions</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Card Games</h3>
+                <p className="text-gray-300">Uno, poker, and traditional card games</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <Trophy className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Chess</h3>
-                <p className="text-gray-300">Strategic battles and tournaments</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Chess</h3>
+                <p className="text-gray-300">Strategic matches for all skill levels</p>
               </div>
               <div className="bg-black/50 rounded-lg p-6 text-center">
-                <Star className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-3">Dominoes</h3>
-                <p className="text-gray-300">Traditional games with prizes</p>
+                <h3 className="text-lg font-bold mb-2 text-kamalo-red">Dominoes</h3>
+                <p className="text-gray-300">Classic domino competitions and fun</p>
               </div>
             </div>
           </div>
 
-          {/* Stay Updated */}
-          <div className="text-center bg-black/50 rounded-lg p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              Stay Updated on <span className="text-kamalo-red">Game Nights</span>
+          {/* Coming Soon Notice */}
+          <div className="text-center bg-gradient-to-r from-kamalo-red/20 to-red-900/20 rounded-lg p-8 border border-kamalo-red/30">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              <span className="text-kamalo-red">Stay Tuned</span> for Launch Date
             </h2>
-            <p className="text-gray-300 mb-6">
-              Join our WhatsApp group to be the first to know when Game Nights launch, plus get updates on tournaments and special events.
+            <p className="text-xl text-gray-300 mb-6">
+              We're putting the finishing touches on our game night setup. Follow us on social media or join our WhatsApp group for updates on when the fun begins!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors font-semibold"
+                className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
-                Join WhatsApp Group
+                Join WhatsApp for Updates
               </a>
               <a
-                href="tel:+27731598909"
+                href="https://instagram.com/kamalo_city"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
-                Call Us: +27 73 159 8909
+                Follow on Instagram
               </a>
             </div>
           </div>

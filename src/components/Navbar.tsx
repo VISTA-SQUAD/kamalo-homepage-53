@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-sm">
       {/* Logo/Brand - visible on mobile */}
       <div className="md:hidden">
-        <Link to="/" className="text-xl font-bold text-white">
+        <Link to="/" className="text-xl font-bold text-yellow-500">
           Kamalo City
         </Link>
       </div>
@@ -108,6 +108,11 @@ const Navbar = () => {
             <DropdownMenuItem asChild>
               <Link to="/gallery/food-and-drinks" className="text-white hover:text-kamalo-red transition-colors">
                 Gallery – Food
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/pages/gallery/ServicesGallery" className="text-white hover:text-kamalo-red transition-colors">
+                Gallery – Services
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -199,6 +204,9 @@ const Navbar = () => {
                     </Link>
                     <Link to="/gallery/food-and-drinks" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
                       Gallery – Food
+                    </Link>
+                    <Link to="/pages/gallery/ServicesGallery" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
+                      Gallery – Services
                     </Link>
                   </CollapsibleContent>
                 </Collapsible>
