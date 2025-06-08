@@ -28,9 +28,7 @@ const IntroStory = () => {
             Welcome to the Heart of <span className="text-kamalo-red">African Culture</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-            Located in vibrant Goodwood, Cape Town, Kamalo City offers authentic African cuisine and cultural experiences. 
-            We bring together traditional flavors, modern comfort, and warm hospitality where every guest becomes family. 
-            Experience the spirit of Ubuntu through our carefully crafted dishes and welcoming atmosphere.
+            Located in vibrant Goodwood, Cape Town, Kamalo City offers authentic African cuisine with warm hospitality. Experience traditional flavors and Ubuntu spirit where every guest becomes family.
           </p>
         </div>
       </div>

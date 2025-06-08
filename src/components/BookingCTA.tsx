@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Calendar, Phone, MessageCircle } from "lucide-react";
+import { Calendar, Phone } from "lucide-react";
 
 const BookingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -46,19 +46,6 @@ const BookingCTA = () => {
                   <Calendar className="w-5 h-5" />
                   Make a Reservation
                 </Link>
-              </Button>
-              
-              <Button asChild className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg rounded-full">
-                <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <MessageCircle className="w-5 h-5" />
-                  WhatsApp Group
-                </a>
-              </Button>
-              
-              <Button asChild className="bg-orange-600 hover:bg-orange-700 text-white px-10 py-6 text-lg rounded-full">
-                <a href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  Pre-Order on Uber Eats
-                </a>
               </Button>
               
               <div className="flex items-center gap-2 text-white">

@@ -29,6 +29,13 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-sm">
+      {/* Logo/Brand - visible on mobile */}
+      <div className="md:hidden">
+        <Link to="/" className="text-xl font-bold text-white">
+          Kamalo City
+        </Link>
+      </div>
+
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center space-x-8">
         <Link to="/" className="text-white hover:text-kamalo-red transition-colors">
@@ -94,8 +101,13 @@ const Navbar = () => {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link to="/gallery/services" className="text-white hover:text-kamalo-red transition-colors">
-                Gallery – All Services
+              <Link to="/gallery/events-and-entertainment" className="text-white hover:text-kamalo-red transition-colors">
+                Gallery – Events
+              </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link to="/gallery/food-and-drinks" className="text-white hover:text-kamalo-red transition-colors">
+                Gallery – Food
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -182,8 +194,11 @@ const Navbar = () => {
                     <Link to="/gallery/restaurant-ambiance" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
                       Gallery – Restaurant
                     </Link>
-                    <Link to="/gallery/services" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Gallery – All Services
+                    <Link to="/gallery/events-and-entertainment" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
+                      Gallery – Events
+                    </Link>
+                    <Link to="/gallery/food-and-drinks" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
+                      Gallery – Food
                     </Link>
                   </CollapsibleContent>
                 </Collapsible>

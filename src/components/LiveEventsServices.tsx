@@ -8,7 +8,7 @@ const LiveEventsServices = () => {
       id: "hookah",
       icon: Wind,
       title: "Hookah Lounge Vibes — Daily from 6 PM",
-      description: "Chill with friends in our ambient indoor lounge or spark up in the outdoor patio. R150 per session with mint, apple, and fruity blends always on deck. No ID needed — just 18+ and ready to vibe.",
+      description: "Premium hookah experience with mint, apple, and fruity blends in our ambient lounge. R150 per session, 18+ welcome.",
       highlights: "🎶 Live DJs. 🪩 Low lights. 🍹 Drinks flowing.",
       link: "/services/hookah-lounge"
     },
@@ -16,28 +16,28 @@ const LiveEventsServices = () => {
       id: "barber",
       icon: Scissors,
       title: "Get Faded, Stay Fresh – In-House Barbershop",
-      description: "Fade, lineup, full cut — all just R60. No bookings needed. Walk in, walk out sharp. And yes, food and drink right after your trim? Always.",
+      description: "Professional cuts for just R60. Walk-in service available with food and drinks right after your trim.",
       link: "/services/barber-next-door"
     },
     {
       id: "games",
       icon: Calendar,
       title: "Game Nights Are Coming Soon",
-      description: "Think pool, Uno, chess, dominoes — with prizes, drinks, and late-night eats. Kamalo's casual game nights will bring community energy back to Goodwood. Stay tuned.",
+      description: "Pool, Uno, chess, dominoes with prizes and late-night eats. Bringing community energy back to Goodwood.",
       link: "/services/game-nights"
     },
     {
       id: "private-events",
       icon: Users,
-      title: "Host Your Next Private Event at Kamalo",
-      description: "Birthdays, pop-ups, or just an all-out party — Kamalo is available for full venue hire. Seats up to 80 guests, sound system included, and outside décor welcome. Let's make your next event unforgettable.",
+      title: "Host Your Private Event at Kamalo",
+      description: "Full venue hire for birthdays and celebrations. Seats 80 guests with sound system and custom décor options.",
       link: "/services/private-bookings"
     },
     {
       id: "live-music",
       icon: Music,
       title: "Live Music & Dancefloor Fridays",
-      description: "Every weekend, the beats drop and the vibe lifts. From old-school Congolese to Afro throwbacks, we're where Goodwood comes to move. Reserve your VIP table early — they go fast.",
+      description: "Weekend beats from Congolese classics to Afro throwbacks. Reserve your VIP table early.",
       link: "/services/live-entertainment"
     }
   ];
