@@ -2,7 +2,6 @@
 import { Gamepad2, Trophy, Users, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
 
 const GameNights = () => {
   return (
@@ -17,7 +16,7 @@ const GameNights = () => {
               Game Nights <span className="text-kamalo-red">Coming Soon</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Epic game nights at Kamalo City! Pool, Uno, chess, dominoes with prizes and community energy.
+              Get ready for epic game nights at Kamalo City! Pool, Uno, chess, dominoes, and more with prizes, late-night eats, and the community energy that Goodwood has been waiting for.
             </p>
           </div>
 
@@ -113,7 +112,6 @@ const GameNights = () => {
         </div>
       </div>
 
-      <FAQ />
       <Footer />
     </div>
   );

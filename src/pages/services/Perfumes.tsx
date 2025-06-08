@@ -2,19 +2,8 @@
 import { Sparkles, Star, Gift, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
 
 const Perfumes = () => {
-  const mensPerfumes = [
-    "Versace Eros", "Dior Sauvage", "Tom Ford Oud Wood", "Creed Aventus",
-    "Bleu de Chanel", "Armani Code", "Paco Rabanne 1 Million", "Hugo Boss Bottled"
-  ];
-
-  const womensPerfumes = [
-    "Chanel No. 5", "Dior J'adore", "Tom Ford Black Orchid", "Versace Bright Crystal",
-    "Yves Saint Laurent Black Opium", "Lancôme La Vie Est Belle", "Marc Jacobs Daisy", "Dolce & Gabbana Light Blue"
-  ];
-
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
@@ -70,35 +59,6 @@ const Perfumes = () => {
             </div>
           </div>
 
-          {/* Perfumes Collection */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Perfume Collection</h2>
-            
-            {/* Men's Perfumes */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-kamalo-red">Men's Collection</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {mensPerfumes.map((perfume, index) => (
-                  <div key={index} className="bg-black/50 rounded-lg p-4 text-center">
-                    <h4 className="font-semibold text-white">{perfume}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Women's Perfumes */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-6 text-kamalo-red">Women's Collection</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {womensPerfumes.map((perfume, index) => (
-                  <div key={index} className="bg-black/50 rounded-lg p-4 text-center">
-                    <h4 className="font-semibold text-white">{perfume}</h4>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* Fragrance Categories */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12">Our Collection</h2>
@@ -147,7 +107,6 @@ const Perfumes = () => {
         </div>
       </div>
 
-      <FAQ />
       <Footer />
     </div>
   );

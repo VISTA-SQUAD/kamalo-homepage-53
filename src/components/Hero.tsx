@@ -1,13 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { scrollToTop } from "@/utils/scrollToTop";
 
 const Hero = () => {
-  const handleNavClick = () => {
-    scrollToTop();
-  };
-
   return (
     <div className="relative h-screen bg-kamalo-dark flex items-center justify-center">
       <div className="absolute inset-0 bg-black/50">

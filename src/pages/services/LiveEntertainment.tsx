@@ -2,7 +2,6 @@
 import { Music, Calendar, Users, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FAQ from "@/components/FAQ";
 
 const LiveEntertainment = () => {
   return (
@@ -108,7 +107,6 @@ const LiveEntertainment = () => {
         </div>
       </div>
 
-      <FAQ />
       <Footer />
     </div>
   );
