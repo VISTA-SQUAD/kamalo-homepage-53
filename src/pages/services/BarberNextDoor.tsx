@@ -1,16 +1,69 @@
+
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Scissors, Clock, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const BarberNextDoor = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const faqs = [
+    {
+      question: "What are your barbershop hours?",
+      answer: "Our barbershop is open Monday through Sunday from 10:00 AM to 8:00 PM. We're here when you need us most!"
+    },
+    {
+      question: "Do I need an appointment?",
+      answer: "Walk-ins are always welcome! However, we recommend calling ahead at +27 73 159 8909 to book an appointment and avoid waiting, especially during busy periods."
+    },
+    {
+      question: "What hair types do you specialize in?",
+      answer: "Our skilled barbers specialize in all hair types, with particular expertise in African and textured hair. We're experienced with fades, designs, beard grooming, and traditional cuts."
+    },
+    {
+      question: "What services do you offer?",
+      answer: "We offer haircuts, precision fades, beard trims, full grooming services, custom hair designs, and kids cuts. All services include professional styling and finishing."
+    },
+    {
+      question: "Can I get food while I wait?",
+      answer: "Absolutely! Since we're located right next to Kamalo City restaurant, you can enjoy a meal or drinks while you wait for your service. We'll let you know when it's your turn."
+    },
+    {
+      question: "Do you offer group bookings?",
+      answer: "Yes! We can accommodate group bookings for special events, parties, or corporate functions. Call us to discuss your group's needs and we'll arrange the best service."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
       <div className="container mx-auto px-6 py-24">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-kamalo-red">Barber</span> Services
           </h1>
@@ -19,7 +72,7 @@ const BarberNextDoor = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-black/50 p-6 rounded-lg border border-gray-800 hover:border-kamalo-red/50 transition-colors hover:shadow-lg hover:shadow-kamalo-red/20">
             <h2 className="text-2xl font-bold mb-6 flex items-center">
               <Scissors className="mr-2 text-kamalo-red" />
@@ -72,7 +125,7 @@ const BarberNextDoor = () => {
           </div>
         </div>
 
-        <div className="bg-black/30 p-8 rounded-lg max-w-4xl mx-auto mb-16 border border-gray-800">
+        <div ref={sectionRef} className={`bg-black/30 p-8 rounded-lg max-w-4xl mx-auto mb-16 border border-gray-800 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl font-bold mb-6 text-center">
             Our <span className="text-kamalo-red">Services</span>
           </h2>
@@ -125,6 +178,37 @@ const BarberNextDoor = () => {
                 <p className="text-kamalo-red font-semibold">R 90.00</p>
               </div>
             </Card>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Frequently Asked <span className="text-kamalo-red">Questions</span>
+            </h2>
+            <p className="text-xl text-gray-300">
+              Everything you need to know about our barbershop services
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`} 
+                  className="bg-black/50 rounded-lg border border-gray-800 px-6 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pb-6 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
 
