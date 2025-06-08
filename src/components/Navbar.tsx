@@ -25,7 +25,6 @@ import {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
 
   return (
@@ -85,29 +84,6 @@ const Navbar = () => {
         </DropdownMenu>
         <DropdownMenu>
           <DropdownMenuTrigger className="flex items-center text-white hover:text-kamalo-red transition-colors focus:outline-none">
-            Menu
-            <ChevronDown className="ml-1 w-4 h-4" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="bg-black/95 border-gray-800 mt-2">
-            <DropdownMenuItem asChild>
-              <Link to="/menu/vegetable-sides" className="text-white hover:text-kamalo-red transition-colors">
-                Veg Sides
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link to="/menu/sides" className="text-white hover:text-kamalo-red transition-colors">
-                Sides
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link to="/menu/daily-specials" className="text-white hover:text-kamalo-red transition-colors">
-                Mains & Daily Specials
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center text-white hover:text-kamalo-red transition-colors focus:outline-none">
             Gallery
             <ChevronDown className="ml-1 w-4 h-4" />
           </DropdownMenuTrigger>
@@ -118,18 +94,8 @@ const Navbar = () => {
               </Link>
             </DropdownMenuItem>
             <DropdownMenuItem asChild>
-              <Link to="/gallery/food-and-drinks" className="text-white hover:text-kamalo-red transition-colors">
-                Gallery – Food & Drinks
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link to="/gallery/events-and-entertainment" className="text-white hover:text-kamalo-red transition-colors">
-                Gallery – Events
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
               <Link to="/gallery/services" className="text-white hover:text-kamalo-red transition-colors">
-                Gallery – Services
+                Gallery – All Services
               </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
@@ -206,24 +172,6 @@ const Navbar = () => {
                     </Link>
                   </CollapsibleContent>
                 </Collapsible>
-                
-                <Collapsible open={menuOpen} onOpenChange={setMenuOpen}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-white hover:text-kamalo-red transition-colors py-2">
-                    Menu
-                    <ChevronDown className={`w-4 h-4 transition-transform ${menuOpen ? 'rotate-180' : ''}`} />
-                  </CollapsibleTrigger>
-                  <CollapsibleContent className="space-y-2 pl-4">
-                    <Link to="/menu/vegetable-sides" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Veg Sides
-                    </Link>
-                    <Link to="/menu/sides" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Sides
-                    </Link>
-                    <Link to="/menu/daily-specials" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Mains & Daily Specials
-                    </Link>
-                  </CollapsibleContent>
-                </Collapsible>
 
                 <Collapsible open={galleryOpen} onOpenChange={setGalleryOpen}>
                   <CollapsibleTrigger className="flex items-center justify-between w-full text-white hover:text-kamalo-red transition-colors py-2">
@@ -234,14 +182,8 @@ const Navbar = () => {
                     <Link to="/gallery/restaurant-ambiance" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
                       Gallery – Restaurant
                     </Link>
-                    <Link to="/gallery/food-and-drinks" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Gallery – Food & Drinks
-                    </Link>
-                    <Link to="/gallery/events-and-entertainment" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Gallery – Events
-                    </Link>
                     <Link to="/gallery/services" className="block text-gray-300 hover:text-kamalo-red transition-colors py-1" onClick={() => setIsOpen(false)}>
-                      Gallery – Services
+                      Gallery – All Services
                     </Link>
                   </CollapsibleContent>
                 </Collapsible>

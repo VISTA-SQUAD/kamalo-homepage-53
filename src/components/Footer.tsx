@@ -1,5 +1,6 @@
 
-import { Clock, Phone, MapPin, Instagram, MessageCircle, Utensils } from "lucide-react";
+import { Clock, Phone, MapPin, Instagram } from "lucide-react";
+import LocationMap from "./LocationMap";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -23,10 +24,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5 text-kamalo-red" />
-                <div>
-                  <p>+27 73 159 8909</p>
-                  <p>+27 73 691 1461</p>
-                </div>
+                <p>+27 73 159 8909</p>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-kamalo-red" />
@@ -48,36 +46,17 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="space-y-3">
-              <a
-                href="https://instagram.com/kamalo_city"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
-              >
-                <Instagram className="w-5 h-5" />
-                <span>Instagram</span>
-              </a>
-              <a
-                href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>WhatsApp Group</span>
-              </a>
-              <a
-                href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 hover:text-kamalo-red transition-colors"
-              >
-                <Utensils className="w-5 h-5" />
-                <span>Uber Eats</span>
-              </a>
-            </div>
+            <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 hover:text-kamalo-red transition-colors mb-4"
+            >
+              <Instagram className="w-5 h-5" />
+              <span>Instagram</span>
+            </a>
+            <LocationMap />
           </div>
         </div>
 

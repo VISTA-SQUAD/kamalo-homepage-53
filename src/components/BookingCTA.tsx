@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Calendar, Phone, MessageCircle, Utensils } from "lucide-react";
+import { Calendar, Phone, MessageCircle } from "lucide-react";
 
 const BookingCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +37,7 @@ const BookingCTA = () => {
             
             <h3 className="text-2xl font-bold text-white mb-6">Let's Talk</h3>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-              Ready to taste authentic African cuisine? Join our community for exclusive updates on events, specials, and announcements. We're here to help with bookings and any questions you may have.
+              Ready to experience Kamalo City? Join our WhatsApp group for the latest updates on events, specials, and exclusive announcements. Or reach out directly — we're here to help with bookings, questions, and everything in between.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -51,7 +51,7 @@ const BookingCTA = () => {
               <Button asChild className="bg-green-600 hover:bg-green-700 text-white px-10 py-6 text-lg rounded-full">
                 <a href="https://chat.whatsapp.com/D8ZGSstifLe0eWYs3GJ5Im" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
-                  WhatsApp Group
+                  Join our WhatsApp group
                 </a>
               </Button>
               
@@ -63,17 +63,6 @@ const BookingCTA = () => {
                 </a>
               </div>
             </div>
-            
-            <p className="mt-8 text-lg text-gray-300">
-              <a 
-                href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="underline text-kamalo-red hover:text-red-400 transition-colors"
-              >
-                Hungry already? Pre-order your meal online and skip the wait.
-              </a>
-            </p>
           </div>
         </div>
       </div>

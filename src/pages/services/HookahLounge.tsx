@@ -2,6 +2,7 @@
 import { Wind, Clock, Users, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +11,24 @@ import {
 } from "@/components/ui/accordion";
 
 const HookahLounge = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "Where can I smoke hookah in Cape Town?",
@@ -52,7 +71,7 @@ const HookahLounge = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Cape Town <span className="text-kamalo-red">Shisha Experience</span>
             </h1>
@@ -62,7 +81,7 @@ const HookahLounge = () => {
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="/lovable-uploads/e8bac841-0a55-4ef6-be6d-f24cbc468ab1.png"
@@ -101,20 +120,20 @@ const HookahLounge = () => {
           </div>
 
           {/* Features */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Wind className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Premium Shisha</h3>
                 <p className="text-gray-300">Mint, double apple, blueberry, mango, and seasonal blends</p>
               </div>
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Users className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Music & Vibes</h3>
                 <p className="text-gray-300">DJs and playlists featuring Afrobeat and Amapiano</p>
               </div>
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <Shield className="w-12 h-12 text-kamalo-red mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-3">Drinks & Food</h3>
                 <p className="text-gray-300">Mocktails and bar-style drinks with full menu available</p>
@@ -123,7 +142,7 @@ const HookahLounge = () => {
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 <AccordionItem 

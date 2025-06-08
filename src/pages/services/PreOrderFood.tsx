@@ -1,7 +1,7 @@
-
 import { Clock, Phone, CheckCircle, Truck } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect, useRef, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +10,24 @@ import {
 } from "@/components/ui/accordion";
 
 const PreOrderFood = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const faqs = [
     {
       question: "How do I pre-order food from Kamalo City?",
@@ -61,7 +79,7 @@ const PreOrderFood = () => {
       <div className="pt-24 px-6">
         <div className="container mx-auto">
           {/* Hero Section */}
-          <div className="text-center mb-16">
+          <div ref={sectionRef} className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-kamalo-red">Pre-Order</span> Fast Pickup & Soon: Delivery
             </h1>
@@ -71,7 +89,7 @@ const PreOrderFood = () => {
           </div>
 
           {/* Service Description */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div>
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
@@ -110,25 +128,25 @@ const PreOrderFood = () => {
           </div>
 
           {/* How It Works */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">How Pre-Ordering Works</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
                 <h3 className="text-lg font-bold mb-2">Call or WhatsApp</h3>
                 <p className="text-gray-300">Contact us via WhatsApp or phone to place your order</p>
               </div>
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
                 <h3 className="text-lg font-bold mb-2">Choose from Full Menu</h3>
                 <p className="text-gray-300">Select from platters, wings, grills, and all menu items</p>
               </div>
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
                 <h3 className="text-lg font-bold mb-2">Set Pickup Time</h3>
                 <p className="text-gray-300">Choose your preferred collection time</p>
               </div>
-              <div className="bg-black/50 rounded-lg p-6 text-center hover:border-kamalo-red border border-gray-800 transition-colors">
+              <div className="bg-black/50 rounded-lg p-6 text-center">
                 <div className="bg-kamalo-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
                 <h3 className="text-lg font-bold mb-2">Quick Pickup</h3>
                 <p className="text-gray-300">Arrive and collect your fresh, ready meal</p>
@@ -137,7 +155,7 @@ const PreOrderFood = () => {
           </div>
 
           {/* Popular Pre-Order Items */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h2 className="text-3xl font-bold text-center mb-12">Popular Pre-Order Items</h2>
             <div className="bg-black/50 rounded-lg p-8 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold text-kamalo-red mb-6 text-center">Customer Favorites</h3>
@@ -153,7 +171,7 @@ const PreOrderFood = () => {
           </div>
 
           {/* FAQs */}
-          <div className="mb-16">
+          <div className={`mb-16 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <div className="max-w-4xl mx-auto">
               <Accordion type="single" collapsible className="space-y-4">
                 <AccordionItem 
@@ -192,14 +210,6 @@ const PreOrderFood = () => {
                 className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
                 Call to Order: +27 73 159 8909
-              </a>
-              <a
-                href="https://www.ubereats.com/za/store/kamalo-city-restaurant/srnMses4VESmEwzdo4gxrw?srsltid=AfmBOopLMQc596GPp0SY2aTtn6OyX-T8oxDd3GAVhDLwV2uekbbVmYzj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition-colors font-semibold"
-              >
-                Order on Uber Eats
               </a>
               <a
                 href="/menu"

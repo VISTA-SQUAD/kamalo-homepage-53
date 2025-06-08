@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Wind, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -109,39 +108,53 @@ const PerfumeSection = () => {
           </div>
         </div>
 
-        {/* Fragrance Navigation Buttons */}
+        {/* Fragrance Lists */}
         <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link 
-              to="/services/perfumes?section=men"
-              className="bg-black/50 rounded-lg p-8 border border-gray-800 hover:border-kamalo-red transition-colors group"
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem 
+              value="men" 
+              className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
             >
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-kamalo-red transition-colors">
-                  🧔 Men's Fragrances
-                </h3>
-                <p className="text-gray-300 mb-4">{menFragrances.length} Available</p>
-                <div className="bg-kamalo-red/20 rounded-lg p-3">
-                  <p className="text-kamalo-red font-semibold text-sm">Click to browse our full collection</p>
+              <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                🧔 Men's Fragrances ({menFragrances.length} Available)
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {menFragrances.map((fragrance, index) => (
+                    <div key={index} className="text-gray-300 text-sm py-1 px-2 bg-gray-800 rounded">
+                      {fragrance}
+                    </div>
+                  ))}
                 </div>
-              </div>
-            </Link>
+                <div className="mt-4 p-4 bg-kamalo-red/20 rounded-lg">
+                  <p className="text-kamalo-red font-semibold">Special Pricing:</p>
+                  <p className="text-gray-300 text-sm">50ml - R70 | 25ml - R35 | 100ml - R150</p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
 
-            <Link 
-              to="/services/perfumes?section=women"
-              className="bg-black/50 rounded-lg p-8 border border-gray-800 hover:border-kamalo-red transition-colors group"
+            <AccordionItem 
+              value="women" 
+              className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
             >
-              <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-kamalo-red transition-colors">
-                  👩 Women's Fragrances
-                </h3>
-                <p className="text-gray-300 mb-4">{womenFragrances.length} Available</p>
-                <div className="bg-kamalo-red/20 rounded-lg p-3">
-                  <p className="text-kamalo-red font-semibold text-sm">Click to browse our full collection</p>
+              <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                👩 Women's Fragrances ({womenFragrances.length} Available)
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                  {womenFragrances.map((fragrance, index) => (
+                    <div key={index} className="text-gray-300 text-sm py-1 px-2 bg-gray-800 rounded">
+                      {fragrance}
+                    </div>
+                  ))}
                 </div>
-              </div>
-            </Link>
-          </div>
+                <div className="mt-4 p-4 bg-kamalo-red/20 rounded-lg">
+                  <p className="text-kamalo-red font-semibold">Special Pricing:</p>
+                  <p className="text-gray-300 text-sm">50ml - R70 | 25ml - R35 | 100ml - R150</p>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
 
         {/* Call to Action */}
@@ -155,17 +168,17 @@ const PerfumeSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+27736911461"
+                href="tel:+27731598909"
                 className="bg-kamalo-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors font-semibold"
               >
-                Call: +27 73 691 1461
+                Call: +27 73 159 8909
               </a>
-              <Link
-                to="/services/perfumes"
+              <a
+                href="/services/perfumes"
                 className="border border-kamalo-red text-kamalo-red px-6 py-3 rounded-full hover:bg-kamalo-red hover:text-white transition-colors font-semibold"
               >
                 Learn More
-              </Link>
+              </a>
             </div>
           </div>
         </div>
