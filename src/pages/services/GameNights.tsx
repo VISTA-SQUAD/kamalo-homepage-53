@@ -2,8 +2,49 @@
 import { Gamepad2, Trophy, Users, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const GameNights = () => {
+  const faqs = [
+    {
+      question: "When will game nights start?",
+      answer: "Pool is already available — tournaments soon."
+    },
+    {
+      question: "What types of games will be featured?",
+      answer: "Chess, dominoes, Uno, cards, pool."
+    },
+    {
+      question: "Do I need to bring my own games?",
+      answer: "No — we've got you covered."
+    },
+    {
+      question: "Will there be prizes for winners?",
+      answer: "Yes — vouchers and other rewards."
+    },
+    {
+      question: "Is it beginner-friendly?",
+      answer: "100% — all are welcome."
+    },
+    {
+      question: "Can I suggest games to include?",
+      answer: "Yes — we love feedback."
+    },
+    {
+      question: "Will food and drinks be available?",
+      answer: "Yes — our full menu is open during game nights."
+    },
+    {
+      question: "How do I stay updated on game night announcements?",
+      answer: "Follow @kamalo_city on socials. Join our Whatsapp Group"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
@@ -16,7 +57,7 @@ const GameNights = () => {
               Game Nights <span className="text-kamalo-red">Coming Soon</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get ready for epic game nights at Kamalo City! Pool, Uno, chess, dominoes, and more with prizes, late-night eats, and the community energy that Goodwood has been waiting for.
+              Get ready for game nights at Kamalo City! Pool, Uno, chess, dominoes with prizes and community vibes.
             </p>
           </div>
 
@@ -32,10 +73,10 @@ const GameNights = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6 text-kamalo-red">Bringing Community Together</h2>
               <p className="text-gray-300 mb-4">
-                Our upcoming game nights will feature a variety of classic and modern games, creating the perfect environment for friendly competition and community connection. From strategic chess matches to exciting pool tournaments, there's something for everyone.
+                Game nights will feature classic and modern games, creating the perfect environment for friendly competition and community connection.
               </p>
               <p className="text-gray-300 mb-6">
-                Enjoy late-night snacks, drinks, and the chance to win prizes while meeting new people and reconnecting with friends. Game nights at Kamalo City will be the social highlight of your week.
+                Enjoy snacks, drinks, and prizes while meeting new people. Game nights at Kamalo City will be the social highlight of your week.
               </p>
               
               <div className="grid grid-cols-2 gap-4">
@@ -79,6 +120,32 @@ const GameNights = () => {
                 <h3 className="text-lg font-bold mb-2 text-kamalo-red">Dominoes</h3>
                 <p className="text-gray-300">Classic domino competitions and fun</p>
               </div>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 

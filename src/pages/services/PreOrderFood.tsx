@@ -3,8 +3,58 @@ import { Utensils, Clock, Car, Shield } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const PreOrderFood = () => {
+  const faqs = [
+    {
+      question: "How do I pre-order food from Kamalo City?",
+      answer: "Order via Uber Eats or WhatsApp."
+    },
+    {
+      question: "Can I pre-order for a group or office lunch?",
+      answer: "Yes, we handle large orders easily."
+    },
+    {
+      question: "What dishes are available for pre-order?",
+      answer: "Our full menu — wings, platters, grills, etc."
+    },
+    {
+      question: "Can I customize my order?",
+      answer: "Not currently, but everything's crafted to be delicious."
+    },
+    {
+      question: "How do I pay for a pre-order?",
+      answer: "Cash at pickup or online."
+    },
+    {
+      question: "When is food ready after I order?",
+      answer: "Within 20 minutes."
+    },
+    {
+      question: "Is delivery available yet?",
+      answer: "Not yet, but coming soon."
+    },
+    {
+      question: "Can I pre-order for a specific pickup time?",
+      answer: "Yes — just let us know."
+    }
+  ];
+
+  const popularItems = [
+    "Fumbwa with Dry Fish",
+    "Grilled Thomson (Fish)",
+    "Grilled Pork (380g)",
+    "Fried Makayabu",
+    "Fried Thomson",
+    "Beef Stew (355g)"
+  ];
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
@@ -63,6 +113,17 @@ const PreOrderFood = () => {
           {/* Popular Dishes */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-center mb-12">Popular Pre-Order Items</h2>
+            <div className="bg-black/50 rounded-lg p-8 mb-8">
+              <h3 className="text-xl font-bold mb-6 text-kamalo-red text-center">Most Ordered Dishes</h3>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                {popularItems.map((item, index) => (
+                  <li key={index} className="flex items-center space-x-3 text-gray-300">
+                    <div className="w-2 h-2 bg-kamalo-red rounded-full"></div>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-black/50 rounded-lg p-6 text-center">
                 <h3 className="text-xl font-bold mb-3 text-kamalo-red">Grilled Pork Feast</h3>
@@ -76,6 +137,32 @@ const PreOrderFood = () => {
                 <h3 className="text-xl font-bold mb-3 text-kamalo-red">Vegetarian Platter</h3>
                 <p className="text-gray-300">Fresh seasonal vegetables prepared with authentic African flavors</p>
               </div>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 

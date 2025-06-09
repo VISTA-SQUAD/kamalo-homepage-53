@@ -2,8 +2,49 @@
 import { Music, Calendar, Users, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const LiveEntertainment = () => {
+  const faqs = [
+    {
+      question: "When do you host live music events?",
+      answer: "Every Friday, sometimes Saturdays."
+    },
+    {
+      question: "Is there a cover charge?",
+      answer: "Usually low or free — varies."
+    },
+    {
+      question: "What kind of music do you play?",
+      answer: "Congolese, Afro, and old-school classics."
+    },
+    {
+      question: "Can I reserve a table during events?",
+      answer: "Yes, both VIP and general seating."
+    },
+    {
+      question: "Do you allow local performers to apply?",
+      answer: "Yes — we support local talent."
+    },
+    {
+      question: "Is it safe and secure to party at Kamalo City?",
+      answer: "Yes — controlled entry and security in place."
+    },
+    {
+      question: "Can we dance and party, or is it just seated?",
+      answer: "You can absolutely dance."
+    },
+    {
+      question: "Do you serve food during live shows?",
+      answer: "Yes — full menu available."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-kamalo-dark text-white">
       <Navbar />
@@ -78,6 +119,32 @@ const LiveEntertainment = () => {
                 <h3 className="text-xl font-bold mb-3">Special Events</h3>
                 <p className="text-gray-300">Album launches, cultural celebrations, and exclusive performances</p>
               </div>
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem 
+                  value="faqs" 
+                  className="bg-black/50 rounded-lg border border-gray-800 data-[state=open]:border-kamalo-red transition-colors"
+                >
+                  <AccordionTrigger className="text-white hover:text-kamalo-red transition-colors text-left py-6 px-6 text-xl font-bold">
+                    FAQs
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-4">
+                      {faqs.map((faq, index) => (
+                        <div key={index} className="border-b border-gray-700 last:border-b-0 pb-4 last:pb-0">
+                          <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
+                          <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
 
